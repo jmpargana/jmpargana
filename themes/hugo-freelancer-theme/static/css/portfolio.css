@@ -1,6 +1,7 @@
 .skillset {
     display: flex;
     flex-direction: column;
+    padding-bottom: 60px;
 }
 
 .skill-title {
@@ -64,12 +65,12 @@
 }
 
 #auth0,#tensor,.svg {
-    width: 40px;
+    width: 48px;
     height: auto;
 }
 
 .list-item>p {
-    font-size: 1.2rem;
+    font-size: 2rem;
     margin-left: 20px;
 }
 

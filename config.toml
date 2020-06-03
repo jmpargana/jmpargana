@@ -1,7 +1,7 @@
 # Site settings
 baseurl = "https://example.org/"
 languageCode = "en-us"
-title = "portfolio"
+title = "jmpargana"
 theme = "hugo-freelancer-theme"
 
 
@@ -12,8 +12,8 @@ theme = "hugo-freelancer-theme"
 
     # To provide some metadata for search engines feel free to add a few
     # information about you and your website.
-    name = "Mr. Hugo"
-    description = "My awesome description"
+    name = "jmpargana"
+    description = "jmpargana official website"
 
     # Since this template is static, the contact form uses www.formspree.io as a
     # proxy. The form makes a POST request to their servers to send the actual
@@ -33,14 +33,14 @@ theme = "hugo-freelancer-theme"
 	custom_js  = []
 
     [params.navigation]
-        brand = "Mr. Hugo's Portfolio"
+        brand = "jmpargana official"
 
 
     [params.header]
         # Copy your own image into './static/img/'' if you wish
-        image = "profile.png"
-        name = "Mr. Hugo"
-        subtitle = "Blogger - Programmer - Gopher"
+        image = "jmpargana.jpg"
+        name = "jmpargana"
+        subtitle = "Musician - Programmer - Linguist"
 
 
     [params.portfolio]
@@ -60,11 +60,10 @@ theme = "hugo-freelancer-theme"
     [params.about]
         title = "About"
         # The about text is splitted into a left and right column
-        left = "Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization."
-        right = "Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!"
-
+        left = "João Pargana is both artist and scientist. He studied piano at HfMDK Frankfurt followed by computer science in the Goethe-University of the same city. His broad range of interests are reflected in computer science where he has learned multiple languages, and is fascinated with topics starting from embedded hardware systems and pentesting to web and mobile development."
+        right = "His technical background in music manifests itself in his approach to learn and practice any skill with lots of dedication in his private time. Besides his professional fields, João is particularly interested in linguistics, which is shown by his fluency in the english, portuguese, german, russian and spanish language, as well as his attitude towards machine learning, especially natural language processing."
         [params.about.button]
-            text = "Download theme"
+            text = "Resume"
             link = "//github.com/digitalcraftsman/hugo-freelancer-theme/archive/master.zip"
             icon = "download"
 
@@ -99,7 +98,7 @@ theme = "hugo-freelancer-theme"
         [params.footer.location]
             title = "Location"
             # Postal address (add as many lines as necessary)
-            address = ["3481 Melrose Place", "Beverly Hills, CA 90210"]
+            address = ["Franfurt am Main", "Germany"]
 
         [params.footer.social]
             title = "Around the web"
@@ -108,13 +107,13 @@ theme = "hugo-freelancer-theme"
             # CSS class.
             [[params.footer.social.networks]]
                 icon = "fa-github"
-                link = "//github.com/spf13/hugo"
+                link = "//github.com/jmpargana"
 
             [[params.footer.social.networks]]
                 icon = "fa-stack-overflow"
-                link=  "//stackoverflow.com/questions/tagged/hugo"
+                link=  "//stackoverflow.com/users/10599843/jmpargana"
 
 
         [params.footer.credits]
-            title = "About Freelancer"
+            title = "Hugo Freelance Theme"
             text = "Freelance is a free to use, open source Bootstrap theme created by [Start Bootstrap](//startbootstrap.com)."
