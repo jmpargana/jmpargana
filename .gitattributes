@@ -1,0 +1,4 @@
+static/gifs/kizkalesi.gif filter=lfs diff=lfs merge=lfs -text
+static/gifs/lispy.gif filter=lfs diff=lfs merge=lfs -text
+static/gifs/stack.gif filter=lfs diff=lfs merge=lfs -text
+static/gifs/whatsapp.gif filter=lfs diff=lfs merge=lfs -text
