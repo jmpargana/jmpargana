@@ -55,12 +55,6 @@
     display: flex;
     align-items: center;
     justify-content: start;
-    margin-bottom: 10px;
-}
-
-.odd {
-    /* background: #18bc9c; */
-    /* background: #fff; */
 }
 
 .desc-body>p {
@@ -68,20 +62,6 @@
     text-align: justify;
     text-justify: inter-word;
     width: 25em;
-    font-size: 18px;
-}
-
-@media only screen and (max-width: 768px) {
-    .desc-body>p {
-        margin: 30px auto;
-        width: 15em;
-    }
-
-    .demo>img {
-        margin-top: 20px;
-        width: 300px;
-        height: auto;
-    }
 }
 
 #auth0,#tensor,.svg {
@@ -91,9 +71,13 @@
 
 .list-item>p {
     font-size: 2rem;
-    margin-left: 40px;
+    margin-left: 20px;
 }
 
 .list-item>i {
     font-size: 2.8rem;
+}
+
+.my-picture {
+    border-radius: 50%;
 }
