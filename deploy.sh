@@ -21,7 +21,9 @@ rm -rf gifs
 
 # replace invalid static links to css and js files generated from hugo
 # only happens with the freelancer theme for the bootstrap and jquery cdn files links
-sed -i -r 's/jmpargana.github.io\(css|js\)/\0/' index.html
+sed -i 's/src=\"jmpargana.github.iojs/src=\"js/g' index.html
+sed -i 's/href=\"jmpargana.github.iocss/href=\"css/g' index.html
+
 
 msg="rebuilding site $(date)"
 
