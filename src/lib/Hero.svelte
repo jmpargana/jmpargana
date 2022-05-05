@@ -7,7 +7,7 @@
   import BgSvg from './BgSvg.svelte'
 
   let scrollY
-  $: opacity = scrollY < 300 ? 1 : 1 - scrollY / 500
+  $: opacity = scrollY < 100 ? 1 : 1 - scrollY / 300
 </script>
 
 <svelte:window bind:scrollY={scrollY} />
@@ -41,12 +41,15 @@
 .cat-mostache {
   position:absolute; 
   top: 80px; 
-  right: 100px
+  right: 100px;
+  pointer-events: none;
 }
 
 .cat-red-resting {
   position:absolute; 
-  top: 800px; 
-  left: 200px
+  z-index: 10;
+  top: 389px; 
+  left: 550px;
+  pointer-events: none;
 }
 </style>

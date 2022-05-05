@@ -20,6 +20,8 @@
 </svg>
 
 <style>
+
+
 #cat-red-resting-tail  {
   animation: shake 1s infinite;
   transform-origin: center left;

@@ -4,7 +4,7 @@
 </script>
 
 
-<IntersectionObserver element={node} let:intersecting>
+<IntersectionObserver once element={node} let:intersecting>
   <div bind:this={node}>
     {#if intersecting}
       <slot/>
