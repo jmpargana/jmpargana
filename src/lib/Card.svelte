@@ -9,39 +9,12 @@
   export let gif = "https://s3.eu-central-1.amazonaws.com/jmpargana.github.io/stack.gif"
   export let github = ""
   export let link = ""
-
-  export let offsetX
-  export let offsetY
-  const friction = 1/32
-
-  /* export let offset = "" */
-
-
-  $: offset = `perspective(600px) rotateY(${offsetX}deg) rotateX(${offsetY}deg)`
-
-
-  function mouseMove(e) {
-
-    let followX = window.innerWidth / 2 - e.clientX;
-    let followY = window.innerHeight / 2 - e.clientY;
-
-    let x = 0,
-      y = 0;
-    x += (-followX - x) * friction;
-    y += (followY - y) * friction;
-
-    offsetX = x
-    offsetY = y
-  }
-
 </script>
 
-<svelte:body on:mousemove={mouseMove} />
 
-
-<div class="card" style:transform={offset}>
+<div class="card">
   <div class="card-header">
-    <div class="wrapper" style:transform={offset}>
+    <div class="wrapper">
       <div class="shape" style:background-image={`url(${gif})`} />
     </div>
   </div>
@@ -63,8 +36,6 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  transform: perspective(600px) rotateY(20deg) rotateX(10deg);
-  transform-style: preserve-3d;
 }
 
 .card-header {
@@ -76,6 +47,7 @@
 .content {
   position: relative;
   padding: 2rem;
+  height: 250px;
 }
 
 .title {

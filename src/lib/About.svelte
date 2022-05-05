@@ -30,6 +30,7 @@
 
 <style>
 .about-outer {
+  width: 100%;
   background-color: white;
   display: flex;
   justify-content: center;
