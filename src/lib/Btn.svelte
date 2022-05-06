@@ -28,6 +28,7 @@
   border-radius: 2rem;
   cursor: pointer;
   transition: all 200ms ease;
+  width: 280px;
 }
 
 .icon-wrapper {
