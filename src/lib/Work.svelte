@@ -55,6 +55,13 @@
   justify-content: center;
   margin-bottom: 12rem;
   position: relative;
+  padding: 2rem;
+}
+
+@media (min-width: 800px) {
+  .work-outer {
+    padding: 0;
+  }
 }
 
 .fixed {

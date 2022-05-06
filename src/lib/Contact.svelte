@@ -41,16 +41,17 @@
 
 
 <style>
+
+
 .contact {
   padding-top: 12rem;
   padding-bottom: 12rem;
   background-color: white;
   transition: all 1s ease;
   height: 100vh;
-  
+
   display: flex;
   justify-content: center;
-
 }
 
 .contact.intersected {
@@ -64,7 +65,6 @@ h2 {
 
 
 .form-inner {
-  padding: 1rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -72,6 +72,7 @@ h2 {
 
 .form-outer {
   width: 100%;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   max-width: 600px;
@@ -81,6 +82,12 @@ h2 {
   border: 2px solid #473bd4;
   padding: 1rem 2rem;
   border-radius: 2rem;
+}
+
+@media (min-width: 800px) {
+  .form-outer {
+    padding: 0;
+  }
 }
 
 .input-container {

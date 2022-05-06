@@ -46,7 +46,7 @@
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   border-radius: 2rem;
   display: flex;
-  width: 570px;
+  max-width: 570px;
   flex-direction: column;
   overflow: hidden;
 }
@@ -56,11 +56,17 @@
 }
 
 .card-header {
-  height: 300px;
+  height: 250px;
   width: 100%;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+@media (min-width: 800px) {
+  .card-header {
+    height: 300px;
+  }
 }
 
 .content {

@@ -30,6 +30,13 @@
 </div>
 
 <style>
+
+.hero-left {
+  margin-top: 350px;
+  margin-left: 2rem;
+}
+
+
 	.hero-content {
     pointer-events: none;
 		position: relative;
@@ -41,17 +48,24 @@
 		position: relative;
 	}
 
-	.hero-left {
-		margin-top: 14rem;
-		margin-left: 8rem;
-	}
-
+@media (min-width: 800px) {
 	.letter {
 		line-height: 14rem;
 	}
 
+	.hero-left {
+		margin-top: 14rem;
+		margin-left: 8rem;
+	}
 	.row {
 		margin-top: 4rem;
+	}
+
+
+}
+
+	.row {
+    margin-top: 1rem;
 		display: flex;
 		gap: 2rem;
 	}

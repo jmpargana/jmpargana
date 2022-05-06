@@ -30,13 +30,20 @@
 
 <style>
 .about-outer {
-  width: 100%;
+  width: auto;
   background-color: white;
   display: flex;
   justify-content: center;
   /* min-height: 50vh; */
   z-index: 2;
+  padding: 2rem;
   position: relative;
+}
+
+@media (min-width: 800px) {
+  .about-outer {
+    padding: 0;
+  }
 }
 
 h2 {
