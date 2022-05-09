@@ -34,22 +34,55 @@
 
 .cat-walking {
   position: absolute;
-  top: 80px;
-  width: 100vw;
+  top: 230px;
+  width: 200vw; /* Because of scale */
+  transform: scale(0.5);
 }
 
 .cat-mostache {
   position:absolute; 
-  top: 80px; 
-  right: 100px;
+  top: 0;
+  right: 0;
   pointer-events: none;
+  transform: scale(0.6);
 }
+
 
 .cat-red-resting {
   position:absolute; 
   z-index: 10;
-  top: 389px; 
-  left: 550px;
+  top: 372px;
+  left: 240px;
+  transform: scale(0.4);
   pointer-events: none;
 }
+
+@media (min-width: 400px) {
+  .cat-red-resting {
+    left: 40px;
+    top: 365px;
+  }
+}
+
+
+@media (min-width: 800px) {
+  .cat-red-resting {
+    top: 389px; 
+    left: 550px;
+    transform: scale(1);
+  }
+  .cat-mostache {
+    top: 80px; 
+    right: 100px;
+    transform: scale(1);
+  }
+  .cat-walking {
+    top: 80px;
+    width: 100vw;
+    transform: scale(1);
+  }
+
+
+}
+
 </style>

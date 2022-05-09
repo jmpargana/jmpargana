@@ -20,7 +20,7 @@
 </script>
 
 
-<svg on:mousemove={setCoords}>
+<svg class="laser" on:mousemove={setCoords}>
   <circle fill="red" cx={$coords.x} cy={$coords.y} r={3} />
 </svg>
 
@@ -30,7 +30,7 @@
 
 
 <style>
-svg {
+.laser {
   width: 100vw;
   height: 100vh;
   z-index: 10;
@@ -42,6 +42,16 @@ svg {
   position: absolute;
   width: 200px;
   z-index: 10;
+  transform: scale(0.8);
 }
+
+
+@media (min-width: 800px) {
+  .cat {
+    width: 200px;
+    transform: scale(1);
+  }
+}
+
 
 </style>

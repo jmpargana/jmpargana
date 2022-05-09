@@ -1,6 +1,7 @@
 <svg
-  width="612"
-  height="524"
+  width="400"
+  height="400"
+  class="waver"
   viewBox="0 0 612 524"
   fill="none"
   xmlns="http://www.w3.org/2000/svg"
@@ -399,7 +400,20 @@
   }
 }
 
+@media (min-width: 1200px) {
+  .waver {
+    width: 600px;
+    height: 600px;
+  }
+}
 
+
+@media (min-width: 1600px) {
+  .waver {
+    width: 800px;
+    height: 800px;
+  }
+}
 
 
 </style>

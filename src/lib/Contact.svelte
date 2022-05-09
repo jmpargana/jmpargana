@@ -2,12 +2,9 @@
   import { createForm } from 'felte'
   import Btn from './Btn.svelte'
   import IntersectionObserver from 'svelte-intersection-observer'
-  import Fa from 'svelte-fa/src/fa.svelte'
-  import { 
-    faCheck, 
-  } from '@fortawesome/free-solid-svg-icons'
   import { draw } from 'svelte/transition'
   import { quintOut } from 'svelte/easing'
+  import Waver from './Waver.svelte'
 
   const { form, errors } = createForm({
     validate: (values) => {
@@ -34,61 +31,66 @@
 
 <div class="contact" class:intersected={intersecting}>
 
-{#if show}
-  <div class="overlay">
-    <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="green" class="bi bi-check-circle" viewBox="0 0 16 16">
-      <path 
-        d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-      <path 
-        in:draw={{duration: 1500, easing: quintOut}}
-        fill="none"
-        stroke="green"
-        stroke-width="1px"
-        d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
-    </svg>
-  </div>
-{/if}
+  {#if show}
+    <div class="overlay">
+      <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="green" class="bi bi-check-circle" viewBox="0 0 16 16">
+        <path 
+          d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+        <path 
+          in:draw={{duration: 1500, easing: quintOut}}
+          fill="none"
+          stroke="green"
+          stroke-width="1px"
+          d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+      </svg>
+    </div>
+  {/if}
 
-<IntersectionObserver element={node} bind:intersecting>
-  <div class="form-outer" bind:this={node}>
-    <h2>Contact</h2>
-    <form 
-      class="form-inner" 
-      use:form 
-      action="https://formspree.io/f/jmpargana@gmail.com" 
-      method="post"
-      on:feltesuccess={() => show = true}
-    >
-      <div class="input-container">
-        <input class:error={$errors.email} name="email" id="email" class="input" type="text" placeholder=" " />
-        <div class:error-label={$errors.email} class="cut"></div>
-        <label class:error-label={$errors.email} for="email" class="placeholder">Email</label>
-      </div>
-      <div class="input-container">
-        <textarea class:error={$errors.message} name="message" id="message" class="input" placeholder=" " rows="8" cols="50" />
-        <div class:error-label={$errors.message} class="cut"></div>
-        <label class:error-label={$errors.message} for="message" class="placeholder">Message</label>
-      </div>
-      <div type="submit">
-        <Btn label="Submit Message" />
-      </div>
-    </form>
+  <IntersectionObserver element={node} bind:intersecting>
+    <div class="form-outer" bind:this={node}>
+      <h2>Contact</h2>
+      <form 
+        class="form-inner" 
+        use:form 
+        action="https://formspree.io/f/jmpargana@gmail.com" 
+        method="post"
+        on:feltesuccess={() => show = true}
+      >
+        <div class="input-container">
+          <input class:error={$errors.email} name="email" id="email" class="input" type="text" placeholder=" " />
+          <div class:error-label={$errors.email} class="cut"></div>
+          <label class:error-label={$errors.email} for="email" class="placeholder">Email</label>
+        </div>
+        <div class="input-container">
+          <textarea class:error={$errors.message} name="message" id="message" class="input" placeholder=" " rows="8" cols="50" />
+          <div class:error-label={$errors.message} class="cut"></div>
+          <label class:error-label={$errors.message} for="message" class="placeholder">Message</label>
+        </div>
+        <div type="submit">
+          <Btn label="Submit Message" />
+        </div>
+      </form>
+    </div>
+  </IntersectionObserver>
+
+
+  <div class="fixed">
+    <Waver />
   </div>
-</IntersectionObserver>
+
 
 </div>
 
 
 <style>
 
-
 .contact {
   padding-top: 12rem;
   padding-bottom: 12rem;
   background-color: white;
   transition: all 1s ease;
-  height: 100vh;
-
+  position: relative;
+  min-height: 170vh;
   display: flex;
   justify-content: center;
 }
@@ -110,6 +112,7 @@ h2 {
 }
 
 .form-outer {
+  z-index: 10;
   width: 100%;
   padding: 2rem;
   display: flex;
@@ -227,5 +230,39 @@ h2 {
 .error-label {
   color: #c62828;
 }
+
+.fixed {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+
+@media (min-width: 400px) {
+  .contact {
+    min-height: 100vh;
+  }
+
+  .fixed {
+    bottom: 100px;
+  }
+}
+
+@media (min-width: 800px) {
+  .fixed {
+    right: 0;
+    bottom: 0;
+  }
+}
+
+@media (min-width: 1600px) {
+  .fixed {
+    right: 50px;
+    bottom: 100px;
+  }
+}
+
 
 </style>

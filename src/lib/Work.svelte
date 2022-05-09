@@ -1,6 +1,5 @@
 <script>
   import Card from './Card.svelte'
-  import Waver from './Waver.svelte'
 
   const projects = [
     {
@@ -30,21 +29,20 @@
 
 <div class="work-outer">
   <div class="work-inner">
-    <h2>Portfolio</h2>
+    <div class="title-wrapper">
+      <h2>Portfolio</h2>
+    </div>
     <div class="col">
-      {#each projects as project, idx}
-          <Card 
-            title={project.title} 
-            description={project.description} 
-            gif={project.gif} 
-            link={project.link}
-            github={project.github}
-          />
+      {#each projects as project}
+        <Card 
+          title={project.title} 
+          description={project.description} 
+          gif={project.gif} 
+          link={project.link}
+          github={project.github}
+        />
       {/each}
     </div>
-  </div>
-  <div class="fixed">
-    <Waver />
   </div>
 </div>
 
@@ -58,32 +56,26 @@
   padding: 2rem;
 }
 
-@media (min-width: 800px) {
-  .work-outer {
-    padding: 0;
-  }
-}
 .work-inner {
   width: 100%;
-}
-
-.fixed {
-  position: absolute;
-  bottom: 0;
-  right: 10%;
-  z-index: 0;
 }
 
 .col {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3rem;
   flex-wrap: wrap;
+  gap: 6rem;
 }
 
 h2 {
-  margin-bottom: 3rem;
+  width: 1600px;
+}
+
+.title-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5rem;
 }
 
 </style>

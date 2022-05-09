@@ -48,7 +48,7 @@
 		position: relative;
 	}
 
-@media (min-width: 800px) {
+@media (min-width: 900px) {
 	.letter {
 		line-height: 14rem;
 	}
