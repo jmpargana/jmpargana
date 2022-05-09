@@ -3,6 +3,7 @@
 </script>
 
 <svg
+  class="cat-walking"
   style:width="100%"
 width="201" height="162" viewBox="0 0 201 162" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g style:animation-delay={delay} id="cat-walking">
@@ -56,6 +57,16 @@ width="201" height="162" viewBox="0 0 201 162" fill="none" xmlns="http://www.w3.
   from {
     transform: rotateY(-30deg);
     transform-origin: top;
+  }
+}
+
+.cat-walking {
+  height: 81px;
+}
+
+@media (min-width: 800px) {
+  .cat-walking {
+    height: 162px;
   }
 }
 </style>

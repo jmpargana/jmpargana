@@ -1,6 +1,6 @@
 <script>
   let scrollY
-  $: show = scrollY > 700 && scrollY < 3500
+  $: show = scrollY > 600 && scrollY < 3500
 
   function scrollToBottom() {
     window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })

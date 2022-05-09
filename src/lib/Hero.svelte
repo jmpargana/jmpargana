@@ -34,9 +34,8 @@
 
 .cat-walking {
   position: absolute;
-  top: 230px;
-  width: 200vw; /* Because of scale */
-  transform: scale(0.5);
+  top: 250px;
+  width: 100vw;
 }
 
 .cat-mostache {
