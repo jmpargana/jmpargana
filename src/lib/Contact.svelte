@@ -25,7 +25,7 @@
   let show = false
 
   $: if (show) {
-    setTimeout(() => show = false, 2000)
+    setTimeout(() => show = false, 1500)
   }
 
 
@@ -70,7 +70,7 @@
         <label class:error-label={$errors.message} for="message" class="placeholder">Message</label>
       </div>
       <div type="submit">
-        <Btn label="Submit Your Message" />
+        <Btn label="Submit Message" />
       </div>
     </form>
   </div>

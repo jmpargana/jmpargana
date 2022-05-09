@@ -46,7 +46,7 @@
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   border-radius: 2rem;
   display: flex;
-  width: 570px;
+  max-width: 1000px;
   flex-direction: column;
   overflow: hidden;
 }
@@ -62,6 +62,7 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+
 
 .content {
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
