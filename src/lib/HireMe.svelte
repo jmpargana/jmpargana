@@ -16,7 +16,7 @@
 <style>
 
 .container {
-  background-image: url('hire-me.gif');
+  background-image: url('/static/hire-me.gif');
   background-size: contain;
   display: grid;
   place-items: center;
