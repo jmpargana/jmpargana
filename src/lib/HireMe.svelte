@@ -31,8 +31,10 @@
   opacity: 0;
 }
 
-.container.show {
-  opacity: 1;
-  transform: translate3d(-50px, 100px, 50px);
+@media (min-width: 1000px) {
+  .container.show {
+    opacity: 1;
+    transform: translate3d(-50px, 100px, 50px);
+  }
 }
 </style>
