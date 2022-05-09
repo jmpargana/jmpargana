@@ -31,15 +31,15 @@
 <div class="work-outer">
   <div class="work-inner">
     <h2>Portfolio</h2>
-    <div class="row">
-      {#each projects as project}
-        <Card 
-          title={project.title} 
-          description={project.description} 
-          gif={project.gif} 
-          link={project.link}
-          github={project.github}
-        />
+    <div class="col">
+      {#each projects as project, idx}
+          <Card 
+            title={project.title} 
+            description={project.description} 
+            gif={project.gif} 
+            link={project.link}
+            github={project.github}
+          />
       {/each}
     </div>
   </div>
@@ -58,10 +58,15 @@
   padding: 2rem;
 }
 
+<<<<<<< HEAD
 @media (min-width: 800px) {
   .work-outer {
     padding: 0;
   }
+=======
+.work-inner {
+  width: 100%;
+>>>>>>> 1eea1a7fb7d7b2be2d7b86716393a547d1dcdd72
 }
 
 .fixed {
@@ -71,12 +76,12 @@
   z-index: 0;
 }
 
-.row {
+.col {
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 3rem;
   flex-wrap: wrap;
-  max-width: 1200px;
 }
 
 h2 {

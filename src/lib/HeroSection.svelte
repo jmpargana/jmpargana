@@ -14,7 +14,7 @@
     <div class="hero-left">
       <div class="name">
         <div class="name-top">
-          <h1 class="letter" style:transform={translateX(3)}>Joao</h1>
+          <h1 class="letter" style:transform={translateX(3)}>João</h1>
         </div>
         <div class="name-bottom">
           <h1 class="letter" style:transform={translateX(-3)}>Pargana</h1>
