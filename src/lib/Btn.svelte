@@ -1,6 +1,6 @@
 <script>
   import Fa from 'svelte-fa/src/fa.svelte'
-  import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
+  import {faChevronRight} from '@fortawesome/free-solid-svg-icons/index.js'
 
   export let label
 

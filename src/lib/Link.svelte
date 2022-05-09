@@ -1,6 +1,6 @@
 <script>
   import Fa from 'svelte-fa/src/fa.svelte'
-  import { faArrowRightLong  } from '@fortawesome/free-solid-svg-icons'
+  import {faArrowRightLong} from '@fortawesome/free-solid-svg-icons/index.js'
 
   export let href="#"
 </script>

@@ -14,7 +14,20 @@
     faPaypal,
     faStackOverflow,
     faStripe,
-  } from '@fortawesome/free-brands-svg-icons'
+  } from '@fortawesome/free-brands-svg-icons/index.js'
+  /* import  faReact from '@fortawesome/free-brands-svg-icons/faReact' */ 
+/* import    faVuejs from '@fortawesome/free-brands-svg-icons/faVuejs' */ 
+/* import    faJs from '@fortawesome/free-brands-svg-icons/faJs' */ 
+/* import    faGolang from '@fortawesome/free-brands-svg-icons/faGolang' */ 
+/* import    faNode from '@fortawesome/free-brands-svg-icons/faNode' */ 
+/* import    faJava from '@fortawesome/free-brands-svg-icons/faJava' */ 
+/* import    faAws from '@fortawesome/free-brands-svg-icons/faAws' */ 
+/* import    faGit from '@fortawesome/free-brands-svg-icons/faGit' */ 
+/* import    faGithub from '@fortawesome/free-brands-svg-icons/faGithub' */ 
+/* import    faLinux from '@fortawesome/free-brands-svg-icons/faLinux' */
+/* import    faPaypal from '@fortawesome/free-brands-svg-icons/faPaypal' */
+/* import    faStackOverflow from '@fortawesome/free-brands-svg-icons/faStackOverflow' */
+/* import    faStripe from '@fortawesome/free-brands-svg-icons/faStripe' */
 
 
   const colors = [
