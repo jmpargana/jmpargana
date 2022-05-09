@@ -1,9 +1,11 @@
 <script>
-  import Fa from 'svelte-fa/src/fa.svelte'
   import Link from './Link.svelte'
-  import { 
-    faGithub, 
-  } from '@fortawesome/free-brands-svg-icons'
+
+  import FaGithub from 'svelte-icons/fa/FaGithub.svelte'
+  /* import Fa from 'svelte-fa/src/fa.svelte' */
+  /* import { */ 
+  /*   faGithub, */ 
+  /* } from '@fortawesome/free-brands-svg-icons' */
 
   export let title = ""
   export let description = ""
@@ -29,7 +31,9 @@
       </div>
       <div class="icons" on:click={handleVisit}>
         <span class="code">Code</span>
-        <Fa icon={faGithub} />
+        <div class="icon">
+          <FaGithub class="icon" />
+        </div>
       </div>
     </div>
   </div>
@@ -144,6 +148,11 @@
 
 .icons:hover {
   transform: rotate(10deg);
+}
+
+.icon {
+  height: 24px;
+  width: 24px;
 }
 
 </style>

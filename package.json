@@ -23,7 +23,9 @@
     "prettier": "^2.5.1",
     "prettier-plugin-svelte": "^2.5.0",
     "svelte": "^3.44.0",
+    "svelte-awesome": "^3.0.0",
     "svelte-fa": "^2.4.0",
+    "svelte-icons": "^2.1.0",
     "svelte-intersection-observer": "^0.10.0"
   },
   "type": "module"

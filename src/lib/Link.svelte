@@ -1,6 +1,5 @@
 <script>
-  import Fa from 'svelte-fa/src/fa.svelte'
-  import {faArrowRightLong} from '@fortawesome/free-solid-svg-icons/index.js'
+  import FaLongArrowAltRight from 'svelte-icons/fa/FaLongArrowAltRight.svelte'
 
   export let href="#"
 </script>
@@ -8,7 +7,9 @@
 <div class="link-container">
   <a class="link" target="_blank" href={href}>Visit Website</a>
   <div class="wrapper">
-    <Fa class="icon" color="#e91e63" icon={faArrowRightLong} />
+    <div class="icon-wrapper">
+      <FaLongArrowAltRight />
+    </div>
   </div>
 </div>
 
@@ -34,4 +35,10 @@
   color: var(--color-primary);
   text-decoration: none !important;
 } 
+
+.icon-wrapper {
+  color: var(--color-primary);
+  height: 24px;
+  width: 24px;
+}
 </style>

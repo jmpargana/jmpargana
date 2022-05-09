@@ -1,6 +1,7 @@
 <script>
-  import Fa from 'svelte-fa/src/fa.svelte'
-  import {faChevronRight} from '@fortawesome/free-solid-svg-icons/index.js'
+  /* import Fa from 'svelte-fa/src/fa.svelte' */
+  /* import {faChevronRight} from '@fortawesome/free-solid-svg-icons/index.js' */
+  import FaChevronRight from 'svelte-icons/fa/FaChevronRight.svelte'
 
   export let label
 
@@ -11,7 +12,9 @@
     {label}
   </div>
   <div class="icon-wrapper">
-    <Fa icon={faChevronRight} />
+    <div class="icon">
+      <FaChevronRight />
+    </div>
   </div>
 </button>
 
@@ -60,5 +63,10 @@
   transform: translate3d(50px, 0, 0);
 }
 
+.icon {
+  height: 20px;
+  width: 20px;
+  margin-left: 4px;
+}
 
 </style>

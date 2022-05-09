@@ -1,33 +1,35 @@
 <script>
-  import Fa from 'svelte-fa/src/fa.svelte'
-  import { 
-    faReact, 
-    faVuejs, 
-    faJs, 
-    faGolang, 
-    faNode, 
-    faJava, 
-    faAws, 
-    faGit, 
-    faGithub, 
-    faLinux,
-    faPaypal,
-    faStackOverflow,
-    faStripe,
-  } from '@fortawesome/free-brands-svg-icons/index.js'
-  /* import  faReact from '@fortawesome/free-brands-svg-icons/faReact' */ 
-/* import    faVuejs from '@fortawesome/free-brands-svg-icons/faVuejs' */ 
-/* import    faJs from '@fortawesome/free-brands-svg-icons/faJs' */ 
-/* import    faGolang from '@fortawesome/free-brands-svg-icons/faGolang' */ 
-/* import    faNode from '@fortawesome/free-brands-svg-icons/faNode' */ 
-/* import    faJava from '@fortawesome/free-brands-svg-icons/faJava' */ 
-/* import    faAws from '@fortawesome/free-brands-svg-icons/faAws' */ 
-/* import    faGit from '@fortawesome/free-brands-svg-icons/faGit' */ 
-/* import    faGithub from '@fortawesome/free-brands-svg-icons/faGithub' */ 
-/* import    faLinux from '@fortawesome/free-brands-svg-icons/faLinux' */
-/* import    faPaypal from '@fortawesome/free-brands-svg-icons/faPaypal' */
-/* import    faStackOverflow from '@fortawesome/free-brands-svg-icons/faStackOverflow' */
-/* import    faStripe from '@fortawesome/free-brands-svg-icons/faStripe' */
+  /* import Fa from 'svelte-fa/src/fa.svelte' */
+  /* import { */ 
+  /*   faReact, */ 
+  /*   faVuejs, */ 
+  /*   faJs, */ 
+  /*   faGolang, */ 
+  /*   faNode, */ 
+  /*   faJava, */ 
+  /*   faAws, */ 
+  /*   faGit, */ 
+  /*   faGithub, */ 
+  /*   faLinux, */
+  /*   faPaypal, */
+  /*   faStackOverflow, */
+  /*   faStripe, */
+  /* } from '@fortawesome/free-brands-svg-icons/index.js' */
+
+  import FaPaypal from 'svelte-icons/fa/FaPaypal.svelte'
+  import FaVuejs from 'svelte-icons/fa/FaVuejs.svelte'
+  import FaJs from 'svelte-icons/fa/FaJs.svelte'
+  import FaGithub from 'svelte-icons/fa/FaGithub.svelte'
+  import FaStackOverflow from 'svelte-icons/fa/FaStackOverflow.svelte'
+  import FaGit from 'svelte-icons/fa/FaGit.svelte'
+  import FaNode from 'svelte-icons/fa/FaNode.svelte'
+  import FaAws from 'svelte-icons/fa/FaAws.svelte'
+  import FaLinux from 'svelte-icons/fa/FaLinux.svelte'
+  import FaReact from 'svelte-icons/fa/FaReact.svelte'
+  import FaStripe from 'svelte-icons/fa/FaStripe.svelte'
+  import FaJava from 'svelte-icons/fa/FaJava.svelte'
+  import DiGo from 'svelte-icons/di/DiGo.svelte'
+  
 
 
   const colors = [
@@ -61,39 +63,74 @@
 
   const randomColor = () => colors[Math.floor(Math.random() * colors.length)]
 
+  const icons = [
+{
+  icon: FaPaypal,
+  text: 'Paypal',
+},
+{
+  icon: FaReact,
+  text: 'React',
+},
+{
+  icon: FaVuejs,
+  text: 'Vuejs',
+},
+{
+  icon: FaJs,
+  text: 'JavaScript',
+},
+{
+  icon: DiGo,
+  text: 'Golang',
+},
+{
+  icon: FaNode,
+  text: 'Node',
+},
+{
+  icon: FaJava,
+  text: 'Java',
+},
+{
+  icon: FaAws,
+  text: 'Aws',
+},
+{
+  icon: FaGit,
+  text: 'Git',
+},
+{
+  icon: FaStackOverflow,
+  text: 'StackOverflow',
+},
+{
+  icon: FaLinux,
+  text: 'Linux',
+},
+{
+  icon: FaGithub,
+  text: 'Github',
+},
+{
+  icon: FaStripe,
+  text: 'Stripe',
+},
+  ]
+
 
 </script>
 
 <div id="infinite" class="highway-slider">
 	<div class="container highway-barrier">
 		<ul class="highway-lane">
-			<li style:color={randomColor()} class="highway-car"><Fa icon={faPaypal} size="3x" /><span class="tech">Paypal</span></li>
-			<li style:color={randomColor()} class="highway-car"><Fa icon={faReact} size="3x" /><span class="tech">React</span></li>
-			<li style:color={randomColor()} class="highway-car"><Fa icon={faVuejs} size="3x" /><span class="tech">Vuejs</span></li>
-			<li style:color={randomColor()} class="highway-car"><Fa icon={faJs} size="3x" /><span class="tech">JavaScript</span></li>
-			<li style:color={randomColor()} class="highway-car"><Fa icon={faGolang} size="3x" /><span class="tech">Golang</span></li>
-			<li style:color={randomColor()} class="highway-car"><Fa icon={faNode} size="3x" /><span class="tech">Nodejs</span></li>
-			<li style:color={randomColor()} class="highway-car"><Fa icon={faJava} size="3x" /><span class="tech">Java</span></li>
-			<li style:color={randomColor()} class="highway-car"><Fa icon={faAws} size="3x" /><span class="tech">S3</span></li>
-			<li style:color={randomColor()} class="highway-car"><Fa icon={faGit} size="3x" /><span class="tech">Git</span></li>
-			<li style:color={randomColor()} class="highway-car"><Fa icon={faStackOverflow} size="3x" /><span class="tech">StackOverflow</span></li>
-			<li style:color={randomColor()} class="highway-car"><Fa icon={faLinux} size="3x" /><span class="tech">Linux</span></li>
-			<li style:color={randomColor()} class="highway-car"><Fa icon={faGithub} size="3x" /><span class="tech">GitHub</span></li>
-			<li style:color={randomColor()} class="highway-car"><Fa icon={faStripe} size="3x" /><span class="tech">Stripe</span></li>
+      {#each icons as it}
+			  <li style:color={randomColor()} class="highway-car"><div class="icon-wrapper"><svelte:component this={it.icon} /></div><span class="tech">{it.text}</span></li>
+      {/each}
 
-			<li style:color={randomColor()} class="highway-car"><Fa icon={faPaypal} size="3x" /><span class="tech">Paypal</span></li>
-			<li style:color={randomColor()} class="highway-car"><Fa icon={faReact} size="3x" /><span class="tech">React</span></li>
-			<li style:color={randomColor()} class="highway-car"><Fa icon={faVuejs} size="3x" /><span class="tech">Vuejs</span></li>
-			<li style:color={randomColor()} class="highway-car"><Fa icon={faJs} size="3x" /><span class="tech">JavaScript</span></li>
-			<li style:color={randomColor()} class="highway-car"><Fa icon={faGolang} size="3x" /><span class="tech">Golang</span></li>
-			<li style:color={randomColor()} class="highway-car"><Fa icon={faNode} size="3x" /><span class="tech">Nodejs</span></li>
-			<li style:color={randomColor()} class="highway-car"><Fa icon={faJava} size="3x" /><span class="tech">Java</span></li>
-			<li style:color={randomColor()} class="highway-car"><Fa icon={faAws} size="3x" /><span class="tech">S3</span></li>
-			<li style:color={randomColor()} class="highway-car"><Fa icon={faGit} size="3x" /><span class="tech">Git</span></li>
-			<li style:color={randomColor()} class="highway-car"><Fa icon={faStackOverflow} size="3x" /><span class="tech">StackOverflow</span></li>
-			<li style:color={randomColor()} class="highway-car"><Fa icon={faLinux} size="3x" /><span class="tech">Linux</span></li>
-			<li style:color={randomColor()} class="highway-car"><Fa icon={faGithub} size="3x" /><span class="tech">GitHub</span></li>
-			<li style:color={randomColor()} class="highway-car"><Fa icon={faStripe} size="3x" /><span class="tech">Stripe</span></li>
+      {#each icons as it}
+			  <li style:color={randomColor()} class="highway-car"><div class="icon-wrapper"><svelte:component this={it.icon} /></div><span class="tech">{it.text}</span></li>
+      {/each}
 		</ul>
 	</div>
 </div>
@@ -207,6 +244,10 @@
   --margin: 150px;
   margin-top: var(--margin);
   margin-bottom: var(--margin);
+}
+
+.icon-wrapper {
+  height: 51px;
 }
 
 </style>
