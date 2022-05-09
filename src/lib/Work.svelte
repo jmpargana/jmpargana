@@ -58,15 +58,13 @@
   padding: 2rem;
 }
 
-<<<<<<< HEAD
 @media (min-width: 800px) {
   .work-outer {
     padding: 0;
   }
-=======
+}
 .work-inner {
   width: 100%;
->>>>>>> 1eea1a7fb7d7b2be2d7b86716393a547d1dcdd72
 }
 
 .fixed {

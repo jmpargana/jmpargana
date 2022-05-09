@@ -46,11 +46,7 @@
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   border-radius: 2rem;
   display: flex;
-<<<<<<< HEAD
-  max-width: 570px;
-=======
   max-width: 1000px;
->>>>>>> 1eea1a7fb7d7b2be2d7b86716393a547d1dcdd72
   flex-direction: column;
   overflow: hidden;
 }
@@ -67,14 +63,11 @@
   background-repeat: no-repeat;
 }
 
-<<<<<<< HEAD
 @media (min-width: 800px) {
   .card-header {
     height: 300px;
   }
 }
-=======
->>>>>>> 1eea1a7fb7d7b2be2d7b86716393a547d1dcdd72
 
 .content {
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
