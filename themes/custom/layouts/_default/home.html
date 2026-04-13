@@ -70,13 +70,24 @@
     </div>
   </div>
 
-  {{/* Always-visible bottom navigation bar — outside the flashlight layer */}}
-  <footer class="home-footer" aria-label="Site navigation">
-    <nav class="home-footer__nav">
-      <a class="home-footer__nav-link" href="/posts/">ARCHIVE</a>
-      <a class="home-footer__nav-link" href="/about/">ABOUT</a>
-    </nav>
-    <span class="home-footer__copy">© {{ now.Year }} JOÃO PARGANA</span>
-  </footer>
+   {{/* Always-visible bottom navigation bar — outside the flashlight layer */}}
+   <footer class="home-footer" aria-label="Site navigation">
+     <nav class="home-footer__nav">
+       <a class="home-footer__nav-link" href="/posts/">ARCHIVE</a>
+       <a class="home-footer__nav-link" href="/about/">ABOUT</a>
+     </nav>
+     <div class="home-footer__social">
+       <a class="home-footer__social-link" href="https://github.com/jmpargana/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+         {{ partial "icon.html" (dict "name" "git") }}
+       </a>
+       <a class="home-footer__social-link" href="https://www.linkedin.com/in/jo%C3%A3o-pargana-9757b91b2/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+         {{ partial "icon.html" (dict "name" "linked") }}
+       </a>
+       <a class="home-footer__social-link" href="mailto:jmpargana@gmail.com" aria-label="Email">
+         {{ partial "icon.html" (dict "name" "mail") }}
+       </a>
+     </div>
+     <span class="home-footer__copy">© {{ now.Year }} JOÃO PARGANA</span>
+   </footer>
 {{ end }}
 
