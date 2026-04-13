@@ -1,0 +1,425 @@
+/* ═══════════════════════════════════════════════════
+   HOME PAGE — FULL SCREEN, OVERRIDES GLOBAL BODY
+   ═══════════════════════════════════════════════════ */
+
+/* When .home-page is on body, reset all global layout constraints */
+.home-page {
+  overflow: hidden;
+  height: 100dvh;
+  background: #000;
+}
+
+.home-page main {
+  min-height: 0;
+  padding-top: 0;
+  overflow: hidden;
+  height: 100dvh;
+  position: relative;
+}
+
+/* ═══════════════════════════════════════════
+   MOBILE REDIRECT (< 768px)
+   ═══════════════════════════════════════════ */
+
+.home-mobile-redirect {
+  display: none; /* hidden by default */
+  position: fixed;
+  inset: 0;
+  background: #000;
+  color: #fff;
+  z-index: 1;
+  overflow-y: auto;
+}
+
+.home-redirect__main {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 3rem 2rem 6rem;
+  max-width: 24rem;
+  margin: 0 auto;
+  gap: 3rem;
+  position: relative;
+}
+
+.home-redirect__header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.home-redirect__kicker {
+  font-family: var(--font-family-heading);
+  font-size: 0.625rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.home-redirect__kicker-rule {
+  width: 3rem;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.home-redirect__body {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.home-redirect__title {
+  font-family: var(--font-family-base);
+  font-style: italic;
+  font-size: clamp(2rem, 6vw, 2.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  font-weight: 400;
+}
+
+.home-redirect__sub {
+  font-family: var(--font-family-base);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0;
+  max-width: 17.5rem;
+}
+
+.home-redirect__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.home-redirect__cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  text-decoration: none;
+  font-family: var(--font-family-heading);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  transition: transform 0.4s ease, background 0.3s ease;
+}
+
+.home-redirect__cta:active {
+  transform: scale(0.97);
+}
+
+.home-redirect__cta svg {
+  width: 1.125rem;
+  height: 1.125rem;
+  flex-shrink: 0;
+}
+
+.home-redirect__cta--primary {
+  background: #a900a9;
+  color: #fff;
+}
+
+.home-redirect__cta--primary:hover {
+  background: #ce00ce;
+}
+
+.home-redirect__cta--secondary {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.home-redirect__cta--secondary:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.home-redirect__glow {
+  position: fixed;
+  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(80px);
+}
+
+.home-redirect__glow--top {
+  top: -10%;
+  right: -10%;
+  width: 16rem;
+  height: 16rem;
+  background: rgba(110, 0, 110, 0.12);
+}
+
+.home-redirect__glow--bottom {
+  bottom: 5%;
+  left: -5%;
+  width: 12rem;
+  height: 12rem;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* ═══════════════════════════════════════════
+   DESKTOP KINETIC MASK (≥ 768px)
+   ═══════════════════════════════════════════ */
+
+.home-content {
+  display: none; /* hidden on mobile, shown on desktop via media query */
+  cursor: none;
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: #000;
+}
+
+/* ── Content below the mask ── */
+.home-reveal {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+/* ── Big name ── */
+.home-name {
+  font-family: var(--font-family-heading);
+  font-weight: 700;
+  font-size: clamp(10rem, 18vw, 22rem);
+  line-height: 0.82;
+  letter-spacing: -0.04em;
+  color: #fff;
+  text-align: center;
+  pointer-events: none;
+  margin: 0;
+  user-select: none;
+}
+
+/* ── Scattered links ── */
+.home-link {
+  position: absolute;
+  z-index: 30;
+  text-decoration: none;
+  font-family: var(--font-family-heading);
+  font-size: 0.875rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #a900a9;
+  transition: color 0.3s ease;
+}
+
+.home-link:hover {
+  color: #fff;
+}
+
+.home-link--blog {
+  top: 15%;
+  left: 10%;
+  transform: rotate(-15deg);
+}
+
+.home-link--about {
+  bottom: 22%;
+  right: 15%;
+  transform: rotate(10deg);
+}
+
+.home-link--since {
+  top: 60%;
+  left: 5%;
+  transform: rotate(90deg);
+  font-family: var(--font-family-base);
+  font-style: italic;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.2);
+  letter-spacing: 0.1em;
+  pointer-events: none;
+}
+
+/* ── Ghost background letter ── */
+.home-bg-letter {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-family-heading);
+  font-weight: 900;
+  font-size: 40vw;
+  color: rgba(255, 255, 255, 0.03);
+  pointer-events: none;
+  user-select: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* ── Cat SVGs ── */
+.cat {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  filter: drop-shadow(0 0 8px rgba(255, 0, 255, 0.3));
+}
+
+.cat6 {
+  transform: scaleX(-1);
+  z-index: 0;
+}
+.cat7 {
+  transform: scaleX(-1);
+  z-index: 0;
+}
+
+/* ── Wandering cats container (behind reveal overlay) ── */
+.home-cats {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;  /* Behind overlay (100), above background (0) */
+}
+
+/* Individual wandering cat styling */
+.home-cats svg {
+  position: fixed;
+  width: 200px;
+  height: 200px;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  will-change: transform;
+  transition: transform 0.05s linear;  /* Smooth position updates */
+}
+
+/* ── Home page footer bar — sits above the flashlight layer ── */
+.home-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem clamp(1.5rem, 5vw, 4rem);
+  pointer-events: auto;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 50%, transparent 100%);
+  min-height: 100px;
+  gap: 2rem;
+}
+
+.home-footer__copy {
+  font-family: var(--font-family-heading);
+  font-size: clamp(0.625rem, 1.5vw, 0.875rem);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  white-space: nowrap;
+  flex-shrink: 1;
+}
+
+/* ── Home footer simple nav ── */
+.home-footer__nav {
+  display: flex;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.home-footer__nav-link {
+  display: inline-block;
+  text-decoration: none;
+  font-family: var(--font-family-heading);
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 0.5s ease;
+  white-space: nowrap;
+}
+
+.home-footer__nav-link:hover {
+  color: #ce00ce;
+}
+
+/* ── Custom cursor (pink kinetic spark) ── */
+.home-cursor-dot {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  background: #ce00ce;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 200;
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
+  left: var(--mouse-x, 50%);
+  top: var(--mouse-y, 50%);
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+   ═══════════════════════════════════════════ */
+
+/* Mobile first: show redirect, hide desktop */
+@media (max-width: 767px) {
+  .home-mobile-redirect {
+    display: block;
+  }
+  .home-content {
+    display: none !important;
+  }
+  /* Show the nav bar on mobile too, but compact and centred */
+  .home-footer {
+    padding: 1.5rem 1rem;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .home-footer__nav {
+    gap: 1.5rem;
+  }
+  /* Hide copyright on mobile — nav buttons are enough */
+  .home-footer__copy {
+    display: none;
+  }
+  /* Push the redirect content above the fixed footer bar */
+  .home-redirect__main {
+    padding-bottom: 7rem;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 768px) and (max-width: 1200px) {
+  .home-footer {
+    padding: 2rem 2rem;
+  }
+  .home-footer__copy {
+    font-size: 0.625rem;
+    letter-spacing: 0.1em;
+  }
+  .home-footer__nav {
+    gap: 2rem;
+  }
+  .home-footer__nav-link {
+    font-size: 1rem;
+  }
+}
+
+/* Desktop: hide redirect, show kinetic */
+@media (min-width: 768px) {
+  .home-mobile-redirect {
+    display: none !important;
+  }
+  .home-content {
+    display: block;
+  }
+}

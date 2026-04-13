@@ -1,0 +1,82 @@
+{{ define "main" }}
+  {{/* ── MOBILE REDIRECT (shown on small screens, hidden on desktop) ── */}}
+  <div class="home-mobile-redirect" aria-hidden="false">
+    <main class="home-redirect__main">
+      <header class="home-redirect__header">
+        <span class="home-redirect__kicker">System Notification</span>
+        <div class="home-redirect__kicker-rule"></div>
+      </header>
+      <section class="home-redirect__body">
+        <h1 class="home-redirect__title">
+          The full interactive experience is built for desktop.
+        </h1>
+        <p class="home-redirect__sub">
+          You probably want to skip directly to the archives or about pages.
+        </p>
+      </section>
+      <nav class="home-redirect__nav">
+        <a class="home-redirect__cta home-redirect__cta--primary" href="/posts/">
+          <span>SKIP TO BLOG</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a class="home-redirect__cta home-redirect__cta--secondary" href="/about/">
+          <span>ABOUT</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+      </nav>
+      <div class="home-redirect__glow home-redirect__glow--top" aria-hidden="true"></div>
+      <div class="home-redirect__glow home-redirect__glow--bottom" aria-hidden="true"></div>
+    </main>
+  </div>
+
+  {{/* ── DESKTOP KINETIC MASK (hidden on small screens) ── */}}
+  <div class="home-content" aria-hidden="false">
+
+    {{/* Content revealed beneath the mask */}}
+    <div class="home-reveal">
+      {{/* Big name */}}
+      <h1 class="home-name" aria-label="João Pargana">
+        JOÃO<br>PARGANA
+      </h1>
+
+      {{/* Background giant ghost letter */}}
+      <span class="home-bg-letter" aria-hidden="true">X</span>
+    </div>
+
+    {{/* Laser cursor dot */}}
+    <div class="laser" aria-hidden="true">
+      <div class="laser-inner">
+        <div class="beam"></div>
+        <div class="dot"></div>
+      </div>
+    </div>
+
+    {{/* Wandering cats (behind reveal overlay) */}}
+    <div class="home-cats" aria-hidden="true">
+      {{ partial "cats/cat0.html" . }}
+      {{ partial "cats/cat1.html" . }}
+      {{ partial "cats/cat2.html" . }}
+      {{ partial "cats/cat3.html" . }}
+      {{ partial "cats/cat4.html" . }}
+      {{ partial "cats/cat5.html" . }}
+      {{ partial "cats/cat6.html" . }}
+      {{ partial "cats/cat7.html" . }}
+      {{ partial "cats/cat8.html" . }}
+      {{ partial "cats/cat9.html" . }}
+      {{ partial "cats/cat10.html" . }}
+      {{ partial "cats/cat11.html" . }}
+      {{ partial "cats/cat12.html" . }}
+      {{ partial "cats/cat13.html" . }}
+    </div>
+  </div>
+
+  {{/* Always-visible bottom navigation bar — outside the flashlight layer */}}
+  <footer class="home-footer" aria-label="Site navigation">
+    <nav class="home-footer__nav">
+      <a class="home-footer__nav-link" href="/posts/">ARCHIVE</a>
+      <a class="home-footer__nav-link" href="/about/">ABOUT</a>
+    </nav>
+    <span class="home-footer__copy">© {{ now.Year }} JOÃO PARGANA</span>
+  </footer>
+{{ end }}
+

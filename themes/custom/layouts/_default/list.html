@@ -1,0 +1,77 @@
+{{ define "main" }}
+  {{ $paginator := .Paginate (.Pages.ByDate.Reverse) }}
+  {{ $hexToBucket := dict
+    "0" 0 "1" 1 "2" 2 "3" 3 "4" 4 "5" 5
+    "6" 6 "7" 7 "8" 8 "9" 9 "a" 10 "b" 11
+    "c" 0 "d" 1 "e" 2 "f" 3
+  }}
+  <div class="content refined-logs-view">
+    <div class="refined-logs-frame">
+      <header class="refined-logs-header">
+        <div class="refined-logs-kicker">{{ site.Params.logs_kicker | default "SYSTEMS_OUTPUT" }}</div>
+        <h1 class="refined-logs-title">
+          {{ with site.Params.logs_title_html }}{{ . | safeHTML }}{{ else }}log<span class="refined-logs-title-primary">.Weekly()</span>{{ end }}
+        </h1>
+      </header>
+
+      <section class="refined-logs-list">
+        {{ range $paginator.Pages }}
+          {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+          {{ $dateHuman := .Date | time.Format "Jan 2, 2006" | upper }}
+          <article class="refined-log-entry">
+            <a class="refined-log-row" href="{{ .RelPermalink }}">
+              <div class="refined-log-main">
+                <h2 class="refined-log-title">{{ .Title }}</h2>
+                {{ if .Params.Tags }}
+                  <div class="refined-log-tags">
+                    {{- range $tag := .Params.Tags }}
+                      {{- $normalizedTag := lower $tag -}}
+                      {{- $digest := md5 $normalizedTag -}}
+                      {{- $n1 := substr $digest 0 1 -}}
+                      {{- $n2 := substr $digest 1 1 -}}
+                      {{- $b1 := index $hexToBucket $n1 | default 0 -}}
+                      {{- $b2 := index $hexToBucket $n2 | default 0 -}}
+                      {{- $bucket := mod (add (mul $b1 7) $b2) 12 -}}
+                      <span class="refined-log-tag refined-log-tag-{{ $bucket }}">{{ $tag | upper }}</span>
+                    {{- end }}
+                  </div>
+                {{ end }}
+              </div>
+              <time class="refined-log-date" datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+            </a>
+          </article>
+        {{ end }}
+      </section>
+
+      <footer class="refined-logs-pagination">
+        <div class="refined-logs-page-state">
+          <span class="refined-logs-page-label">CURRENT_PAGE</span>
+          <span class="refined-logs-page-number">{{ printf "%02d" $paginator.PageNumber }} / {{ printf "%02d" $paginator.TotalPages }}</span>
+        </div>
+        <div class="refined-logs-page-controls">
+          {{ if $paginator.HasPrev }}
+            <a class="refined-logs-prev" href="{{ $paginator.Prev.URL }}">PREVIOUS</a>
+          {{ else }}
+            <span class="refined-logs-prev is-disabled">PREVIOUS</span>
+          {{ end }}
+
+          {{ if $paginator.HasNext }}
+            <a class="refined-logs-next" href="{{ $paginator.Next.URL }}" aria-label="Next page">
+              <svg class="refined-logs-next-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </a>
+          {{ else }}
+            <span class="refined-logs-next is-disabled" aria-hidden="true">
+              <svg class="refined-logs-next-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </span>
+          {{ end }}
+        </div>
+      </footer>
+    </div>
+  </div>
+{{ end }}

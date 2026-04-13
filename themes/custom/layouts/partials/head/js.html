@@ -1,0 +1,19 @@
+{{- $main := resources.Get "js/main.js" }}
+{{- $spring := resources.Get "js/spring.js" }}
+{{- $catSpring := resources.Get "js/cat-spring.js" }}
+{{- $catWanderer := resources.Get "js/cat-wanderer.js" }}
+{{- $reveal := resources.Get "js/reveal-animation.js" }}
+{{- $scripts := slice $spring $catSpring $catWanderer $reveal $main | resources.Concat "js/bundle.js" }}
+
+{{- with $scripts }}
+  {{- if eq hugo.Environment "development" }}
+    {{- with . | js.Build }}
+      <script defer src="{{ .RelPermalink }}"></script>
+    {{- end }}
+  {{- else }}
+    {{- $opts := dict "minify" true }}
+    {{- with . | js.Build $opts | fingerprint }}
+      <script defer src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"></script>
+    {{- end }}
+  {{- end }}
+{{- end }}

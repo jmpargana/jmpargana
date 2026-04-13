@@ -1,0 +1,53 @@
+html {
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  margin: 0;
+  overflow-x: hidden;
+}
+
+header, footer:not(.home-footer) {
+  position: relative;
+  background-color: var(--color-bg);
+}
+
+main {
+  min-height: calc(100vh - 200px); /* minus header */
+  display: flex;
+  flex-direction: column;
+  padding-top: 4.4rem;
+}
+
+/* Home page: full-screen takeover — always black regardless of color scheme */
+html:has(body.home-page),
+.home-page,
+.home-page main {
+  background: #000 !important;
+  color: #fff;
+}
+
+.home-page {
+  overflow: hidden;
+}
+
+.home-page main {
+  min-height: 0;
+  padding-top: 0;
+  overflow: hidden;
+}
+
+.content {
+  max-width: var(--layout-content-width);
+  width: 100%;
+  margin: 1rem auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  box-sizing: border-box;
+}

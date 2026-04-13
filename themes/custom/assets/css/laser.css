@@ -1,0 +1,24 @@
+
+.laser {
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.dot {
+  position: absolute;
+  left: 0; top: 0;
+  width: var(--dot-size);
+  height: var(--dot-size);
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 50%,
+      white 0 30%,
+      hsl(var(--laser-hue) 100% 60% / 0.9) 55%,
+      hsla(var(--laser-hue) 100% 60% / 0.6) 75%,
+      transparent 100%);
+  box-shadow:
+    0 0 calc(var(--dot-size) * 0.8) calc(var(--dot-size) * 0.25) hsla(var(--laser-hue) 100% 60% / 0.6),
+    0 0 calc(var(--dot-size) * 1.6) calc(var(--dot-size) * 0.5) hsla(var(--laser-hue) 100% 60% / 0.4);
+}
+

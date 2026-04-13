@@ -1,0 +1,37 @@
+
+
+.time-title {
+  text-transform: uppercase;
+  color: var(--color-time);
+}
+
+.tags {
+  display: flex;
+  margin-bottom: 3rem;
+}
+
+.tag {
+  background-color: var(--color-tag-bg);
+  color: var(--color-tag-text);
+  border-radius: 8px;
+  margin-right: 0.5rem;
+}
+
+.card-link {
+  display: block;                     /* so it fills its container */
+  background: var(--color-bg);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md) 0;
+  color: inherit;                     /* text keeps normal color */
+  text-decoration: none;              /* remove underline if <a> */
+  /* box-shadow: 0 1px 3px rgba(0,0,0,0.1); */
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card-link:hover,
+.card-link:focus {
+  box-shadow: 0 1px 0px rgba(0,0,0,0.15);
+  transform: translateY(-1px);
+  cursor: pointer;
+}
+

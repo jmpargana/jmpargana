@@ -1,0 +1,13 @@
+{{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+{{ $dateHuman := .Date | time.Format "Jan 2, 2006" }}
+<header class="article-header">
+  <div class="article-kicker-row">
+    <span class="article-kicker">Issue No. {{ printf "%03d" .Date.YearDay }}</span>
+    <span class="article-kicker-line" aria-hidden="true"></span>
+    <time class="article-kicker-date" datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+  </div>
+  <h1 class="article-title">{{ .Title }}</h1>
+  {{ with .Description }}
+    <p class="article-dek">{{ . }}</p>
+  {{ end }}
+</header>

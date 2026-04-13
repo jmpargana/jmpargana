@@ -1,0 +1,95 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  newsletter
+
+  Sample SAM Template for newsletter
+
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    Timeout: 3
+
+Resources:
+  JoinNewsletterFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      Timeout: 30
+      CodeUri: src/
+      Handler: join.lambda_handler
+      Runtime: python3.12
+      Architectures:
+        - x86_64
+      Events:
+        JoinNewsletter:
+          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Properties:
+            Path: /newsletter
+            Method: post
+
+  LeaveNewsletterFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      Timeout: 30
+      CodeUri: src/
+      Handler: leave.lambda_handler
+      Runtime: python3.12
+      Architectures:
+        - x86_64
+      Events:
+        LeaveNewsletter:
+          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Properties:
+            Path: /newsletter/{id}
+            Method: delete
+
+  BroadcastNewsletterFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      Timeout: 30
+      CodeUri: src/
+      Handler: broadcast.lambda_handler
+      Runtime: python3.12
+      Architectures:
+        - x86_64
+      Events:
+        LeaveNewsletter:
+          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Properties:
+            Path: /newsletter
+            Method: get
+
+
+Outputs:
+  # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
+  # Find out more about other implicit resources you can reference within SAM
+  # https://github.com/awslabs/serverless-application-model/blob/master/docs/internals/generated_resources.rst#api
+  JoinNewsletterApi:
+    Description: "API Gateway endpoint URL for Prod stage for Hello World function"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/newsletter/"
+  JoinNewsletterFunction:
+    Description: "Hello World Lambda Function ARN"
+    Value: !GetAtt JoinNewsletterFunction.Arn
+  JoinNewsletterFunctionIamRole:
+    Description: "Implicit IAM Role created for Hello World function"
+    Value: !GetAtt JoinNewsletterFunctionRole.Arn
+
+  LeaveNewsletterApi:
+    Description: "API Gateway endpoint URL for Prod stage for Hello World function"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/newsletter/{id}"
+  LeaveNewsletterFunction:
+    Description: "Hello World Lambda Function ARN"
+    Value: !GetAtt LeaveNewsletterFunction.Arn
+  LeaveNewsletterFunctionIamRole:
+    Description: "Implicit IAM Role created for Hello World function"
+    Value: !GetAtt LeaveNewsletterFunctionRole.Arn
+
+  BroadcastNewsletterApi:
+    Description: "API Gateway endpoint URL for Prod stage for Hello World function"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/newsletter/{id}"
+  BroadcastNewsletterFunction:
+    Description: "Hello World Lambda Function ARN"
+    Value: !GetAtt BroadcastNewsletterFunction.Arn
+  BroadcastNewsletterFunctionIamRole:
+    Description: "Implicit IAM Role created for Hello World function"
+    Value: !GetAtt BroadcastNewsletterFunctionRole.Arn

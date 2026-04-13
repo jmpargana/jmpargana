@@ -1,0 +1,84 @@
+/* ═══════════════════════════════════════════════════
+   CINEMATIC REVEAL ANIMATION STYLES - MOUSE-DRIVEN
+   ═══════════════════════════════════════════════════ */
+
+/**
+ * The overlay covers the entire viewport
+ * Canvas inside handles the reveal masking
+ */
+.cinematic-reveal-overlay {
+  position: fixed;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  width: calc(100% + 40px);
+  height: calc(100% + 40px);
+  z-index: 100;
+  pointer-events: none;
+  
+  /* Remove background - canvas will handle it */
+  background: transparent;
+  
+  /* GPU acceleration */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/**
+ * Canvas element - remove CSS blur, rely on canvas blur only
+ */
+.cinematic-reveal-overlay canvas {
+  /* Remove filter: blur(8px) to prevent edge transparency */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/**
+ * Ensure SVG inside overlay is properly positioned
+ */
+.cinematic-reveal-overlay svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  
+  /* GPU acceleration */
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/**
+ * The mask shape (ellipse that follows cursor)
+ */
+.cinematic-reveal-overlay ellipse {
+  will-change: transform, filter;
+  transform-origin: center center;
+  shape-rendering: geometricPrecision;
+}
+
+/**
+ * Accessibility: respect reduced motion preference
+ * Don't show overlay at all
+ */
+@media (prefers-reduced-motion: reduce) {
+  .cinematic-reveal-overlay {
+    display: none !important;
+  }
+}
+
+/**
+ * Performance optimization: force GPU layers
+ */
+.home-page .home-reveal,
+.home-page .laser,
+.home-page .home-footer {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}

@@ -1,0 +1,42 @@
+{{ define "main" }}
+  {{ $hexToBucket := dict
+    "0" 0 "1" 1 "2" 2 "3" 3 "4" 4 "5" 5
+    "6" 6 "7" 7 "8" 8 "9" 9 "a" 10 "b" 11
+    "c" 0 "d" 1 "e" 2 "f" 3
+  }}
+  <div class="content article-view">
+    <div class="article-frame">
+      <div class="article-back">
+        <a class="article-back-link" href="/posts/">
+          <svg class="article-back-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="19" y1="12" x2="5" y2="12"/>
+            <polyline points="12 19 5 12 12 5"/>
+          </svg>
+          <span>BACK TO ARCHIVES</span>
+        </a>
+      </div>
+
+      {{ partial "article-header.html" . }}
+
+      <article class="article-body">
+        {{ .Content }}
+      </article>
+
+      {{ if .Params.Tags }}
+        <div class="article-tags">
+          {{- range $tag := .Params.Tags }}
+            {{- $normalizedTag := lower $tag -}}
+            {{- $digest := md5 $normalizedTag -}}
+            {{- $n1 := substr $digest 0 1 -}}
+            {{- $n2 := substr $digest 1 1 -}}
+            {{- $b1 := index $hexToBucket $n1 | default 0 -}}
+            {{- $b2 := index $hexToBucket $n2 | default 0 -}}
+            {{- $bucket := mod (add (mul $b1 7) $b2) 12 -}}
+            <span class="article-chip article-chip-{{ $bucket }}">{{ $tag }}</span>
+          {{- end }}
+        </div>
+      {{ end }}
+
+    </div>
+  </div>
+{{ end }}

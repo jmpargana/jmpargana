@@ -1,0 +1,117 @@
+footer:not(.home-footer) {
+  width: 100%;
+}
+
+/* Override: on home page the site-footer is hidden — the home layout manages its own fixed footer */
+.home-page .site-footer {
+  display: none;
+}
+
+.site-footer {
+  width: 100%;
+  background-color: #fafafa;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 3rem 1.5rem;
+  box-sizing: border-box;
+}
+
+.site-footer__inner {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+@media (min-width: 48rem) {
+  .site-footer__inner {
+    max-width: var(--layout-content-width);
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+}
+
+.site-footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+@media (min-width: 48rem) {
+  .site-footer__brand {
+    align-items: flex-start;
+  }
+}
+
+.site-footer__copy {
+  font-family: var(--font-family-heading);
+  font-size: 0.625rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  opacity: 0.6;
+}
+
+.site-footer__tagline {
+  font-family: var(--font-family-base);
+  font-style: italic;
+  font-size: 1.125rem;
+  color: var(--color-text);
+}
+
+.site-footer__social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 48rem) {
+  .site-footer__social {
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+  }
+}
+
+.site-footer__social-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--color-muted);
+  transition: color 0.4s ease;
+}
+
+.site-footer__social-link:hover {
+  color: var(--color-editorial-tertiary);
+}
+
+.site-footer__social-link .icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.site-footer__social-label {
+  font-family: var(--font-family-heading);
+  font-size: 0.625rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]):not([data-theme="dark"]) .site-footer {
+    background-color: #0c0f0f;
+  }
+}
+
+:root[data-theme="dark"] .site-footer {
+  background-color: #0c0f0f;
+}

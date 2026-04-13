@@ -1,0 +1,63 @@
+baseURL = 'https://jmpargana.com/'
+languageCode = 'en-us'
+title = 'jmpargana'
+theme = "custom"
+languagecode = "en"
+defaultcontentlanguage = "en"
+
+
+[pagination]
+pagerSize = 10
+
+[services]
+[services.disqus]
+shortname = "jmpargana"
+
+[markup.highlight]
+style = "github"
+noClasses = false
+
+[params]
+  author = "Joao Pargana"
+  info = "DevOps and Cloud Engineer"
+  description = "Joao Pargana Personal Blog and Site"
+  keywords = "blog,developer,personal"
+  avatarurl = "images/avatar.jpg"
+
+  faviconSVG = "/img/favicon.svg"
+  favicon_32 = "/img/favicon-32x32.png"
+  favicon_16 = "/img/favicon-16x16.png"
+
+  since = 2019
+
+  enableTwemoji = true
+
+  colorScheme = "auto"
+  hidecolorschemetoggle = false
+
+  # Blog List Page Parameters
+  logs_kicker = "SYSTEMS_OUTPUT"
+  logs_title_html = "log<span class=\"refined-logs-title-primary\">.Weekly()</span>"
+
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
+  author = "authors"
+
+# Social links
+[[params.social]]
+  name = "Github"
+  icon = "fa-brands fa-github fa-2x"
+  weight = 1
+  url = "https://github.com/jmpargana/"
+
+# Menu links
+[[menu.main]]
+  name = "Blog"
+  weight = 0
+  url  = "/posts/"
+[[menu.main]]
+  name = "About"
+  weight = 1
+  url = "/about/"

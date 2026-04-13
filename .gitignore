@@ -1,1 +1,8 @@
-tags
+public
+.aws-sam
+.terraform
+*.tfstate*
+.opencode
+.vscode
+function.zip
+*.zip
