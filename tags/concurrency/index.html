@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Concurrency | jmpargana</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+      <link rel="stylesheet" href="/css/bundle.min.c1599c5493bbe49ded20afa3256a84c69c27cd93559a873db20cc6dde99f02b9.css" integrity="sha256-wVmcVJO75J3tIK&#43;jJWqExpwnzZNVmoc9sgzG3emfArk=" crossorigin="anonymous">
+
+      <script defer src="/js/bundle.1c4d05a365cf3733c689a1a0696987451207f55155c2abd230d616e088f09b4c.js" integrity="sha256-HE0Fo2XPNzPGiaGgaWmHRRIH9VFVwqvSMNYW4Ijwm0w=" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+  
+  <header>
+    <div class="container-header">
+  <div class="site-header">
+    <a class="title-header" href="/">jmpargana</a>
+    <div class="header-center">
+      
+  <nav class="nav-container">
+    <ul class="nav-menu">
+    <li class="nav-item">
+      <a href="/about/">About</a>
+    </li>
+    <li class="nav-item">
+      <a href="/posts/">Blog</a>
+    </li>
+    </ul>
+  </nav>
+
+    </div>
+    <div class="header-actions">
+      <button class="theme-toggle" type="button" aria-label="Toggle color theme" aria-pressed="false" title="Toggle color theme">
+        <span class="theme-toggle-icon" aria-hidden="true">◐</span>
+      </button>
+      <button class="header-menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">≡</button>
+    </div>
+  </div>
+</div>
+
+
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+  <div class="mobile-nav__backdrop"></div>
+  <nav class="mobile-nav__panel" role="navigation" aria-label="Mobile navigation">
+    <button class="mobile-nav__close" type="button" aria-label="Close menu">✕</button>
+    <ul class="mobile-nav__list">
+      
+        <li class="mobile-nav__item">
+          <a class="mobile-nav__link" href="/about/">About</a>
+        </li>
+      
+        <li class="mobile-nav__item">
+          <a class="mobile-nav__link" href="/posts/">Blog</a>
+        </li>
+      
+    </ul>
+    <div class="mobile-nav__social">
+      <a class="mobile-nav__social-link" href="https://github.com/jmpargana/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="currentColor" d="M237.9 461.4C237.9 463.4 235.6 465 232.7 465C229.4 465.3 227.1 463.7 227.1 461.4C227.1 459.4 229.4 457.8 232.3 457.8C235.3 457.5 237.9 459.1 237.9 461.4zM206.8 456.9C206.1 458.9 208.1 461.2 211.1 461.8C213.7 462.8 216.7 461.8 217.3 459.8C217.9 457.8 216 455.5 213 454.6C210.4 453.9 207.5 454.9 206.8 456.9zM251 455.2C248.1 455.9 246.1 457.8 246.4 460.1C246.7 462.1 249.3 463.4 252.3 462.7C255.2 462 257.2 460.1 256.9 458.1C256.6 456.2 253.9 454.9 251 455.2zM316.8 72C178.1 72 72 177.3 72 316C72 426.9 141.8 521.8 241.5 555.2C254.3 557.5 258.8 549.6 258.8 543.1C258.8 536.9 258.5 502.7 258.5 481.7C258.5 481.7 188.5 496.7 173.8 451.9C173.8 451.9 162.4 422.8 146 415.3C146 415.3 123.1 399.6 147.6 399.9C147.6 399.9 172.5 401.9 186.2 425.7C208.1 464.3 244.8 453.2 259.1 446.6C261.4 430.6 267.9 419.5 275.1 412.9C219.2 406.7 162.8 398.6 162.8 302.4C162.8 274.9 170.4 261.1 186.4 243.5C183.8 237 175.3 210.2 189 175.6C209.9 169.1 258 202.6 258 202.6C278 197 299.5 194.1 320.8 194.1C342.1 194.1 363.6 197 383.6 202.6C383.6 202.6 431.7 169 452.6 175.6C466.3 210.3 457.8 237 455.2 243.5C471.2 261.2 481 275 481 302.4C481 398.9 422.1 406.6 366.2 412.9C375.4 420.8 383.2 435.8 383.2 459.3C383.2 493 382.9 534.7 382.9 542.9C382.9 549.4 387.5 557.3 400.2 555C500.2 521.8 568 426.9 568 316C568 177.3 455.5 72 316.8 72zM169.2 416.9C167.9 417.9 168.2 420.2 169.9 422.1C171.5 423.7 173.8 424.4 175.1 423.1C176.4 422.1 176.1 419.8 174.4 417.9C172.8 416.3 170.5 415.6 169.2 416.9zM158.4 408.8C157.7 410.1 158.7 411.7 160.7 412.7C162.3 413.7 164.3 413.4 165 412C165.7 410.7 164.7 409.1 162.7 408.1C160.7 407.5 159.1 407.8 158.4 408.8zM190.8 444.4C189.2 445.7 189.8 448.7 192.1 450.6C194.4 452.9 197.3 453.2 198.6 451.6C199.9 450.3 199.3 447.3 197.3 445.4C195.1 443.1 192.1 442.8 190.8 444.4zM179.4 429.7C177.8 430.7 177.8 433.3 179.4 435.6C181 437.9 183.7 438.9 185 437.9C186.6 436.6 186.6 434 185 431.7C183.6 429.4 181 428.4 179.4 429.7z"/></svg></div>
+        <span>GitHub</span>
+      </a>
+      <a class="mobile-nav__social-link" href="https://linkedin.com/in/jmpargana" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="currentColor" d="M512 96L127.9 96C110.3 96 96 110.5 96 128.3L96 511.7C96 529.5 110.3 544 127.9 544L512 544C529.6 544 544 529.5 544 511.7L544 128.3C544 110.5 529.6 96 512 96zM231.4 480L165 480L165 266.2L231.5 266.2L231.5 480L231.4 480zM198.2 160C219.5 160 236.7 177.2 236.7 198.5C236.7 219.8 219.5 237 198.2 237C176.9 237 159.7 219.8 159.7 198.5C159.7 177.2 176.9 160 198.2 160zM480.3 480L413.9 480L413.9 376C413.9 351.2 413.4 319.3 379.4 319.3C344.8 319.3 339.5 346.3 339.5 374.2L339.5 480L273.1 480L273.1 266.2L336.8 266.2L336.8 295.4L337.7 295.4C346.6 278.6 368.3 260.9 400.6 260.9C467.8 260.9 480.3 305.2 480.3 362.8L480.3 480z"/></svg></div>
+        <span>LinkedIn</span>
+      </a>
+      <a class="mobile-nav__social-link" href="mailto:jmpargana@gmail.com" aria-label="Email">
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-16 -16 96 96">
+    <g transform="scale(1, 1.25) translate(0, -6)">
+      <path fill="currentColor" d="M32,34.934L63.617,10.34C62.984,8.965,61.613,8,60,8H4c-1.613,0-2.984,0.965-3.617,2.34L32,34.934z"/>
+      <path fill="currentColor" d="M34.457,43.156C33.734,43.719,32.867,44,32,44s-1.734-0.281-2.457-0.844L0,20.18V52c0,2.211,1.789,4,4,4h56c2.211,0,4-1.789,4-4V20.18L34.457,43.156z"/>
+    </g>
+  </svg></div>
+        <span>Email</span>
+      </a>
+    </div>
+  </nav>
+</div>
+
+  </header>
+  
+  <main>
+    
+  
+  
+  <div class="content refined-logs-view">
+    <div class="refined-logs-frame">
+      <header class="refined-logs-header">
+        <div class="refined-logs-kicker">SYSTEMS_OUTPUT</div>
+        <h1 class="refined-logs-title">
+          log<span class="refined-logs-title-primary">.Weekly()</span>
+        </h1>
+      </header>
+
+      <section class="refined-logs-list">
+        
+          
+          
+          <article class="refined-log-entry">
+            <a class="refined-log-row" href="/posts/graceful_shutdown/">
+              <div class="refined-log-main">
+                <h2 class="refined-log-title">Graceful Shutdown</h2>
+                
+                  <div class="refined-log-tags"><span class="refined-log-tag refined-log-tag-1">GO</span><span class="refined-log-tag refined-log-tag-9">BACKEND</span><span class="refined-log-tag refined-log-tag-4">FAULT TOLERANCE</span><span class="refined-log-tag refined-log-tag-6">ERROR HANDLING</span><span class="refined-log-tag refined-log-tag-2">CONCURRENCY</span>
+                  </div>
+                
+              </div>
+              <time class="refined-log-date" datetime="2026-03-05T22:03:54&#43;01:00">MAR 5, 2026</time>
+            </a>
+          </article>
+        
+      </section>
+
+      <footer class="refined-logs-pagination">
+        <div class="refined-logs-page-state">
+          <span class="refined-logs-page-label">CURRENT_PAGE</span>
+          <span class="refined-logs-page-number">01 / 01</span>
+        </div>
+        <div class="refined-logs-page-controls">
+          
+            <span class="refined-logs-prev is-disabled">PREVIOUS</span>
+          
+
+          
+            <span class="refined-logs-next is-disabled" aria-hidden="true">
+              <svg class="refined-logs-next-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </span>
+          
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  </main>
+  
+  <footer>
+    <footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__brand">
+      <div class="site-footer__copy">© 2026 MIT Licensed.</div>
+      <div class="site-footer__tagline">Joao Pargana Blog & Site</div>
+    </div>
+    <div class="site-footer__social">
+      <a class="site-footer__social-link" href="https://github.com/jmpargana/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="currentColor" d="M237.9 461.4C237.9 463.4 235.6 465 232.7 465C229.4 465.3 227.1 463.7 227.1 461.4C227.1 459.4 229.4 457.8 232.3 457.8C235.3 457.5 237.9 459.1 237.9 461.4zM206.8 456.9C206.1 458.9 208.1 461.2 211.1 461.8C213.7 462.8 216.7 461.8 217.3 459.8C217.9 457.8 216 455.5 213 454.6C210.4 453.9 207.5 454.9 206.8 456.9zM251 455.2C248.1 455.9 246.1 457.8 246.4 460.1C246.7 462.1 249.3 463.4 252.3 462.7C255.2 462 257.2 460.1 256.9 458.1C256.6 456.2 253.9 454.9 251 455.2zM316.8 72C178.1 72 72 177.3 72 316C72 426.9 141.8 521.8 241.5 555.2C254.3 557.5 258.8 549.6 258.8 543.1C258.8 536.9 258.5 502.7 258.5 481.7C258.5 481.7 188.5 496.7 173.8 451.9C173.8 451.9 162.4 422.8 146 415.3C146 415.3 123.1 399.6 147.6 399.9C147.6 399.9 172.5 401.9 186.2 425.7C208.1 464.3 244.8 453.2 259.1 446.6C261.4 430.6 267.9 419.5 275.1 412.9C219.2 406.7 162.8 398.6 162.8 302.4C162.8 274.9 170.4 261.1 186.4 243.5C183.8 237 175.3 210.2 189 175.6C209.9 169.1 258 202.6 258 202.6C278 197 299.5 194.1 320.8 194.1C342.1 194.1 363.6 197 383.6 202.6C383.6 202.6 431.7 169 452.6 175.6C466.3 210.3 457.8 237 455.2 243.5C471.2 261.2 481 275 481 302.4C481 398.9 422.1 406.6 366.2 412.9C375.4 420.8 383.2 435.8 383.2 459.3C383.2 493 382.9 534.7 382.9 542.9C382.9 549.4 387.5 557.3 400.2 555C500.2 521.8 568 426.9 568 316C568 177.3 455.5 72 316.8 72zM169.2 416.9C167.9 417.9 168.2 420.2 169.9 422.1C171.5 423.7 173.8 424.4 175.1 423.1C176.4 422.1 176.1 419.8 174.4 417.9C172.8 416.3 170.5 415.6 169.2 416.9zM158.4 408.8C157.7 410.1 158.7 411.7 160.7 412.7C162.3 413.7 164.3 413.4 165 412C165.7 410.7 164.7 409.1 162.7 408.1C160.7 407.5 159.1 407.8 158.4 408.8zM190.8 444.4C189.2 445.7 189.8 448.7 192.1 450.6C194.4 452.9 197.3 453.2 198.6 451.6C199.9 450.3 199.3 447.3 197.3 445.4C195.1 443.1 192.1 442.8 190.8 444.4zM179.4 429.7C177.8 430.7 177.8 433.3 179.4 435.6C181 437.9 183.7 438.9 185 437.9C186.6 436.6 186.6 434 185 431.7C183.6 429.4 181 428.4 179.4 429.7z"/></svg></div>
+        <span class="site-footer__social-label">GitHub</span>
+      </a>
+      <a class="site-footer__social-link" href="https://www.linkedin.com/in/jo%C3%A3o-pargana-9757b91b2/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="currentColor" d="M512 96L127.9 96C110.3 96 96 110.5 96 128.3L96 511.7C96 529.5 110.3 544 127.9 544L512 544C529.6 544 544 529.5 544 511.7L544 128.3C544 110.5 529.6 96 512 96zM231.4 480L165 480L165 266.2L231.5 266.2L231.5 480L231.4 480zM198.2 160C219.5 160 236.7 177.2 236.7 198.5C236.7 219.8 219.5 237 198.2 237C176.9 237 159.7 219.8 159.7 198.5C159.7 177.2 176.9 160 198.2 160zM480.3 480L413.9 480L413.9 376C413.9 351.2 413.4 319.3 379.4 319.3C344.8 319.3 339.5 346.3 339.5 374.2L339.5 480L273.1 480L273.1 266.2L336.8 266.2L336.8 295.4L337.7 295.4C346.6 278.6 368.3 260.9 400.6 260.9C467.8 260.9 480.3 305.2 480.3 362.8L480.3 480z"/></svg></div>
+        <span class="site-footer__social-label">LinkedIn</span>
+      </a>
+      <a class="site-footer__social-link" href="mailto:jmpargana@gmail.com" aria-label="Email">
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-16 -16 96 96">
+    <g transform="scale(1, 1.25) translate(0, -6)">
+      <path fill="currentColor" d="M32,34.934L63.617,10.34C62.984,8.965,61.613,8,60,8H4c-1.613,0-2.984,0.965-3.617,2.34L32,34.934z"/>
+      <path fill="currentColor" d="M34.457,43.156C33.734,43.719,32.867,44,32,44s-1.734-0.281-2.457-0.844L0,20.18V52c0,2.211,1.789,4,4,4h56c2.211,0,4-1.789,4-4V20.18L34.457,43.156z"/>
+    </g>
+  </svg></div>
+        <span class="site-footer__social-label">Email</span>
+      </a>
+    </div>
+  </div>
+</footer>
+
+  </footer>
+  
+</body>
+</html>

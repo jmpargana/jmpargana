@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>This Blog&#39;s Tech Stack &amp; Architecture | jmpargana</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+      <link rel="stylesheet" href="/css/bundle.min.c1599c5493bbe49ded20afa3256a84c69c27cd93559a873db20cc6dde99f02b9.css" integrity="sha256-wVmcVJO75J3tIK&#43;jJWqExpwnzZNVmoc9sgzG3emfArk=" crossorigin="anonymous">
+
+      <script defer src="/js/bundle.1c4d05a365cf3733c689a1a0696987451207f55155c2abd230d616e088f09b4c.js" integrity="sha256-HE0Fo2XPNzPGiaGgaWmHRRIH9VFVwqvSMNYW4Ijwm0w=" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+  
+  <header>
+    <div class="container-header">
+  <div class="site-header">
+    <a class="title-header" href="/">jmpargana</a>
+    <div class="header-center">
+      
+  <nav class="nav-container">
+    <ul class="nav-menu">
+    <li class="nav-item">
+      <a href="/about/">About</a>
+    </li>
+    <li class="nav-item">
+      <a href="/posts/">Blog</a>
+    </li>
+    </ul>
+  </nav>
+
+    </div>
+    <div class="header-actions">
+      <button class="theme-toggle" type="button" aria-label="Toggle color theme" aria-pressed="false" title="Toggle color theme">
+        <span class="theme-toggle-icon" aria-hidden="true">◐</span>
+      </button>
+      <button class="header-menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">≡</button>
+    </div>
+  </div>
+</div>
+
+
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+  <div class="mobile-nav__backdrop"></div>
+  <nav class="mobile-nav__panel" role="navigation" aria-label="Mobile navigation">
+    <button class="mobile-nav__close" type="button" aria-label="Close menu">✕</button>
+    <ul class="mobile-nav__list">
+      
+        <li class="mobile-nav__item">
+          <a class="mobile-nav__link" href="/about/">About</a>
+        </li>
+      
+        <li class="mobile-nav__item">
+          <a class="mobile-nav__link" href="/posts/">Blog</a>
+        </li>
+      
+    </ul>
+    <div class="mobile-nav__social">
+      <a class="mobile-nav__social-link" href="https://github.com/jmpargana/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="currentColor" d="M237.9 461.4C237.9 463.4 235.6 465 232.7 465C229.4 465.3 227.1 463.7 227.1 461.4C227.1 459.4 229.4 457.8 232.3 457.8C235.3 457.5 237.9 459.1 237.9 461.4zM206.8 456.9C206.1 458.9 208.1 461.2 211.1 461.8C213.7 462.8 216.7 461.8 217.3 459.8C217.9 457.8 216 455.5 213 454.6C210.4 453.9 207.5 454.9 206.8 456.9zM251 455.2C248.1 455.9 246.1 457.8 246.4 460.1C246.7 462.1 249.3 463.4 252.3 462.7C255.2 462 257.2 460.1 256.9 458.1C256.6 456.2 253.9 454.9 251 455.2zM316.8 72C178.1 72 72 177.3 72 316C72 426.9 141.8 521.8 241.5 555.2C254.3 557.5 258.8 549.6 258.8 543.1C258.8 536.9 258.5 502.7 258.5 481.7C258.5 481.7 188.5 496.7 173.8 451.9C173.8 451.9 162.4 422.8 146 415.3C146 415.3 123.1 399.6 147.6 399.9C147.6 399.9 172.5 401.9 186.2 425.7C208.1 464.3 244.8 453.2 259.1 446.6C261.4 430.6 267.9 419.5 275.1 412.9C219.2 406.7 162.8 398.6 162.8 302.4C162.8 274.9 170.4 261.1 186.4 243.5C183.8 237 175.3 210.2 189 175.6C209.9 169.1 258 202.6 258 202.6C278 197 299.5 194.1 320.8 194.1C342.1 194.1 363.6 197 383.6 202.6C383.6 202.6 431.7 169 452.6 175.6C466.3 210.3 457.8 237 455.2 243.5C471.2 261.2 481 275 481 302.4C481 398.9 422.1 406.6 366.2 412.9C375.4 420.8 383.2 435.8 383.2 459.3C383.2 493 382.9 534.7 382.9 542.9C382.9 549.4 387.5 557.3 400.2 555C500.2 521.8 568 426.9 568 316C568 177.3 455.5 72 316.8 72zM169.2 416.9C167.9 417.9 168.2 420.2 169.9 422.1C171.5 423.7 173.8 424.4 175.1 423.1C176.4 422.1 176.1 419.8 174.4 417.9C172.8 416.3 170.5 415.6 169.2 416.9zM158.4 408.8C157.7 410.1 158.7 411.7 160.7 412.7C162.3 413.7 164.3 413.4 165 412C165.7 410.7 164.7 409.1 162.7 408.1C160.7 407.5 159.1 407.8 158.4 408.8zM190.8 444.4C189.2 445.7 189.8 448.7 192.1 450.6C194.4 452.9 197.3 453.2 198.6 451.6C199.9 450.3 199.3 447.3 197.3 445.4C195.1 443.1 192.1 442.8 190.8 444.4zM179.4 429.7C177.8 430.7 177.8 433.3 179.4 435.6C181 437.9 183.7 438.9 185 437.9C186.6 436.6 186.6 434 185 431.7C183.6 429.4 181 428.4 179.4 429.7z"/></svg></div>
+        <span>GitHub</span>
+      </a>
+      <a class="mobile-nav__social-link" href="https://linkedin.com/in/jmpargana" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="currentColor" d="M512 96L127.9 96C110.3 96 96 110.5 96 128.3L96 511.7C96 529.5 110.3 544 127.9 544L512 544C529.6 544 544 529.5 544 511.7L544 128.3C544 110.5 529.6 96 512 96zM231.4 480L165 480L165 266.2L231.5 266.2L231.5 480L231.4 480zM198.2 160C219.5 160 236.7 177.2 236.7 198.5C236.7 219.8 219.5 237 198.2 237C176.9 237 159.7 219.8 159.7 198.5C159.7 177.2 176.9 160 198.2 160zM480.3 480L413.9 480L413.9 376C413.9 351.2 413.4 319.3 379.4 319.3C344.8 319.3 339.5 346.3 339.5 374.2L339.5 480L273.1 480L273.1 266.2L336.8 266.2L336.8 295.4L337.7 295.4C346.6 278.6 368.3 260.9 400.6 260.9C467.8 260.9 480.3 305.2 480.3 362.8L480.3 480z"/></svg></div>
+        <span>LinkedIn</span>
+      </a>
+      <a class="mobile-nav__social-link" href="mailto:jmpargana@gmail.com" aria-label="Email">
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-16 -16 96 96">
+    <g transform="scale(1, 1.25) translate(0, -6)">
+      <path fill="currentColor" d="M32,34.934L63.617,10.34C62.984,8.965,61.613,8,60,8H4c-1.613,0-2.984,0.965-3.617,2.34L32,34.934z"/>
+      <path fill="currentColor" d="M34.457,43.156C33.734,43.719,32.867,44,32,44s-1.734-0.281-2.457-0.844L0,20.18V52c0,2.211,1.789,4,4,4h56c2.211,0,4-1.789,4-4V20.18L34.457,43.156z"/>
+    </g>
+  </svg></div>
+        <span>Email</span>
+      </a>
+    </div>
+  </nav>
+</div>
+
+  </header>
+  
+  <main>
+    
+  
+  <div class="content article-view">
+    <div class="article-frame">
+      <div class="article-back">
+        <a class="article-back-link" href="/posts/">
+          <svg class="article-back-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="19" y1="12" x2="5" y2="12"/>
+            <polyline points="12 19 5 12 12 5"/>
+          </svg>
+          <span>BACK TO ARCHIVES</span>
+        </a>
+      </div>
+
+      
+
+<header class="article-header">
+  <div class="article-kicker-row">
+    <span class="article-kicker">Issue No. 102</span>
+    <span class="article-kicker-line" aria-hidden="true"></span>
+    <time class="article-kicker-date" datetime="2026-04-12T22:03:54&#43;01:00">Apr 12, 2026</time>
+  </div>
+  <h1 class="article-title">This Blog&#39;s Tech Stack &amp; Architecture</h1>
+  
+</header>
+
+      <article class="article-body">
+        <p>In this post I&rsquo;ll go over the architecture behind this static site plus newsletter features, as well as the decisions behind the tech used.</p>
+<h2 id="overview">Overview</h2>
+<p><img src="/images/site/arch.png" alt="architecture"></p>
+<h2 id="frontend">Frontend</h2>
+<p>Starting with the frontend. The previous site was developed with <a href="https://svelte.dev/">svelte</a> as a fun project to work with a technology I was excited about. Since I&rsquo;ve added a blog to it, the functional requirements changed:</p>
+<ul>
+<li>Display page with list of blog posts</li>
+<li>Render markdown in page style for individual post</li>
+<li>Display landing page with animations</li>
+<li>Make it easy to write articles in markdown without having to change code</li>
+<li>Make it easy to update animations and styles without having to rewrite a lot of code</li>
+</ul>
+<p>With these requirements in mind, continuing to write svelte would require me to create a set of components for the markdown, and implement a rendering engine, so that I could simply add a static asset which would get converted.</p>
+<p>Working with svelte also makes it difficult to experiment with animations, because the most efficient and document code you find, is usually vanilla javascript, which has good integration with all modern browser APIs.</p>
+<p>I&rsquo;ve decided to use <a href="https://gohugo.io/">hugo</a> for the following reasons:</p>
+<ul>
+<li>great support for blogging and markdown rendering</li>
+<li>blazing fast (always a popular argument)</li>
+<li>built on top of helm templating engine, which is something I&rsquo;m very familiar with because of my backend work</li>
+<li>popular and full of extensions</li>
+<li>great support for vanilla js, html and css</li>
+</ul>
+<p>The way I&rsquo;ve configured my hugo site was by creating a custom theme, where I define all the vanilla html, js and css inside the theme, then use the main site with only the parameters and markdown content added.</p>
+<p>For styling I&rsquo;m using CSS variables because they&rsquo;re well-supported across all modern browsers and provide excellent extensibility. You build your styles on top of variables and tweaking them in the browser developer tools updates the whole design instantaneously.</p>
+<h2 id="designs">Designs</h2>
+<p>Continuing on the css styles line, I started by copying the styles I had on my previous blog. However, a few weeks ago I watched a <a href="https://www.youtube.com/watch?v=qaB5HF4ax9M">fireship video</a> about <a href="https://stitch.withgoogle.com">stitch</a>.</p>
+<p>If you&rsquo;re not familiar with it, I recommend exploring <a href="https://stitch.withgoogle.com">stitch</a>. It generates Figma-friendly designs from LLM prompts, allowing you to iterate on designs through natural language.</p>
+<p>Using Stitch was particularly useful because design has been a challenge for me in past projects. Leveraging AI-generated designs provided a practical solution without hiring a dedicated designer.</p>
+<p>Lastly, to set up those designs with the already existing css variables code, was just a matter of wiring up the MCP google provides and letting it update the whole codebase.</p>
+<h2 id="newsletter">Newsletter</h2>
+<p>Now we get to the fun part. The requirements for my newsletter were the following:</p>
+<ul>
+<li>Accept very low throughput and sporadic requests to manage user base</li>
+<li>Have list of users available behind UI so it&rsquo;s easy to review changes</li>
+<li>Spend $0</li>
+</ul>
+<p>The requirements for low throughput and sporadic requests are straightforward to solve with any modern technology. The real considerations are CPU and memory efficiency, and ensuring rapid response times even if the service hasn&rsquo;t run in several days.</p>
+<p>The best tool I found was to use <a href="https://aws.amazon.com/lambda/">AWS Lambda</a>, which not only fits all requirements but offers a few more interesting features:</p>
+<ul>
+<li>I can configure it to scale aggressively if needed</li>
+<li>Very low latency</li>
+<li>Easy to develop</li>
+</ul>
+<p>I picked python because of the amazing <a href="https://pypi.org/project/boto3/">boto3</a> library, which exposes AWS services with a very simple SDK.</p>
+<p>The hardest part about developing lambda functions is to test them locally. Fortunately, AWS provides with a CLI tool <a href="https://aws.amazon.com/serverless/sam/">sam</a> that solves exactly that problem.</p>
+<p>If you look into the <a href="https://github.com/jmpargana/jmpargana">repository</a> you can see a very complete README (auto generated when generating the project), which has all the commands needed to test it locally:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">&gt; sam build --use-container
+</span></span><span class="line"><span class="cl">&gt; sam <span class="nb">local</span> invoke join --event events/event.json
+</span></span><span class="line"><span class="cl">&gt; sam <span class="nb">local</span> start-api
+</span></span><span class="line"><span class="cl">curl http://localhost:3000
+</span></span></code></pre></div><h2 id="infrastructure">Infrastructure</h2>
+<p>To provision the infrastructure mentioned above, I used Terraform. This is my preferred tool at work, and using it has deepened my knowledge of the AWS provider.</p>
+<p>The terraform folder has a few modules to simplify the main provisioning. I&rsquo;ve create a <code>state-module</code>, which creates an s3 bucket and dynamodb to store the backend remotely.</p>
+<blockquote>
+<p>NOTE: As of terraform v1.10.0 a new <code>use_lockfile</code> can be used, instead of configuring a separate database for locking.</p>
+</blockquote>
+<p>I also have a <code>function-module</code> which abstracts the provisioning I need to perform for each of the lambda functions.</p>
+<p>A Lambda function can be deployed and provisioned in different ways within Terraform. My approach is to use a compiled <code>.zip</code> file that gets hashed and encoded before submission to AWS. I&rsquo;ll explain this decision in the automation section.</p>
+<p>Once you have deployed the lambda functions you need a provision a REST API on AWS Gateway for it to be accessible from the outside.</p>
+<p>Here&rsquo;s a full list of the building blocks without getting lost in the weeds of implementation details:</p>
+<ul>
+<li>API Gateway REST API</li>
+<li>API Gateway Resource</li>
+<li>API Gateway Deployment (one per lambda)</li>
+<li>API Gateway Stage (one per deployment)</li>
+</ul>
+<p>Then, per lambda:</p>
+<ul>
+<li>API Gateway Method</li>
+<li>API Gateway Integration</li>
+<li>Lambda Function (code)</li>
+<li>Lambda Invoke Permission</li>
+</ul>
+<p>And the shared infra:</p>
+<ul>
+<li>DynamoDB (to store user list)</li>
+<li>IAM Policy (document, and policy)</li>
+<li>IAM Role (with policy attachment)</li>
+<li>SES (Email) template, to be used by broadcasting function</li>
+</ul>
+<p>Last but not least, we also need to configure an extra function and responses for CORS policies, since the lambda will not be running in the same domain (the domain was delegated to GitHub Pages CDN).</p>
+<h2 id="automation">Automation</h2>
+<p>Regarding the automation, we could have automated the deploy, but the only thing changing continuously is likely to be the javascript animations, design &amp; themes and the actual upload of new articles. For this reason I&rsquo;ve opted at compiling the lambda function locally and running the terraform locally as well not to risk exposing my AWS credentials with a future supply-chain attack.</p>
+<p>The only automation we have in place is a simple GitHub Action to call the broadcasting function everytime a new article get&rsquo;s added/updated from the <code>/content/posts</code> folder.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>That&rsquo;s it on the implementation of this site. If you are curious feel free to clone and playaround with the code locally. If you have doubts or suggestions you can open an issue you reach out to me directly.</p>
+
+      </article>
+
+      
+        <div class="article-tags"><span class="article-chip article-chip-1">arch</span><span class="article-chip article-chip-7">lambda</span><span class="article-chip article-chip-6">terraform</span><span class="article-chip article-chip-10">aws</span><span class="article-chip article-chip-5">python</span><span class="article-chip article-chip-9">javascript</span><span class="article-chip article-chip-3">stitch</span><span class="article-chip article-chip-10">hugo</span><span class="article-chip article-chip-6">vanilla</span><span class="article-chip article-chip-10">hugo</span>
+        </div>
+      
+
+    </div>
+  </div>
+
+  </main>
+  
+  <footer>
+    <footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__brand">
+      <div class="site-footer__copy">© 2026 MIT Licensed.</div>
+      <div class="site-footer__tagline">Joao Pargana Blog & Site</div>
+    </div>
+    <div class="site-footer__social">
+      <a class="site-footer__social-link" href="https://github.com/jmpargana/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="currentColor" d="M237.9 461.4C237.9 463.4 235.6 465 232.7 465C229.4 465.3 227.1 463.7 227.1 461.4C227.1 459.4 229.4 457.8 232.3 457.8C235.3 457.5 237.9 459.1 237.9 461.4zM206.8 456.9C206.1 458.9 208.1 461.2 211.1 461.8C213.7 462.8 216.7 461.8 217.3 459.8C217.9 457.8 216 455.5 213 454.6C210.4 453.9 207.5 454.9 206.8 456.9zM251 455.2C248.1 455.9 246.1 457.8 246.4 460.1C246.7 462.1 249.3 463.4 252.3 462.7C255.2 462 257.2 460.1 256.9 458.1C256.6 456.2 253.9 454.9 251 455.2zM316.8 72C178.1 72 72 177.3 72 316C72 426.9 141.8 521.8 241.5 555.2C254.3 557.5 258.8 549.6 258.8 543.1C258.8 536.9 258.5 502.7 258.5 481.7C258.5 481.7 188.5 496.7 173.8 451.9C173.8 451.9 162.4 422.8 146 415.3C146 415.3 123.1 399.6 147.6 399.9C147.6 399.9 172.5 401.9 186.2 425.7C208.1 464.3 244.8 453.2 259.1 446.6C261.4 430.6 267.9 419.5 275.1 412.9C219.2 406.7 162.8 398.6 162.8 302.4C162.8 274.9 170.4 261.1 186.4 243.5C183.8 237 175.3 210.2 189 175.6C209.9 169.1 258 202.6 258 202.6C278 197 299.5 194.1 320.8 194.1C342.1 194.1 363.6 197 383.6 202.6C383.6 202.6 431.7 169 452.6 175.6C466.3 210.3 457.8 237 455.2 243.5C471.2 261.2 481 275 481 302.4C481 398.9 422.1 406.6 366.2 412.9C375.4 420.8 383.2 435.8 383.2 459.3C383.2 493 382.9 534.7 382.9 542.9C382.9 549.4 387.5 557.3 400.2 555C500.2 521.8 568 426.9 568 316C568 177.3 455.5 72 316.8 72zM169.2 416.9C167.9 417.9 168.2 420.2 169.9 422.1C171.5 423.7 173.8 424.4 175.1 423.1C176.4 422.1 176.1 419.8 174.4 417.9C172.8 416.3 170.5 415.6 169.2 416.9zM158.4 408.8C157.7 410.1 158.7 411.7 160.7 412.7C162.3 413.7 164.3 413.4 165 412C165.7 410.7 164.7 409.1 162.7 408.1C160.7 407.5 159.1 407.8 158.4 408.8zM190.8 444.4C189.2 445.7 189.8 448.7 192.1 450.6C194.4 452.9 197.3 453.2 198.6 451.6C199.9 450.3 199.3 447.3 197.3 445.4C195.1 443.1 192.1 442.8 190.8 444.4zM179.4 429.7C177.8 430.7 177.8 433.3 179.4 435.6C181 437.9 183.7 438.9 185 437.9C186.6 436.6 186.6 434 185 431.7C183.6 429.4 181 428.4 179.4 429.7z"/></svg></div>
+        <span class="site-footer__social-label">GitHub</span>
+      </a>
+      <a class="site-footer__social-link" href="https://www.linkedin.com/in/jo%C3%A3o-pargana-9757b91b2/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="currentColor" d="M512 96L127.9 96C110.3 96 96 110.5 96 128.3L96 511.7C96 529.5 110.3 544 127.9 544L512 544C529.6 544 544 529.5 544 511.7L544 128.3C544 110.5 529.6 96 512 96zM231.4 480L165 480L165 266.2L231.5 266.2L231.5 480L231.4 480zM198.2 160C219.5 160 236.7 177.2 236.7 198.5C236.7 219.8 219.5 237 198.2 237C176.9 237 159.7 219.8 159.7 198.5C159.7 177.2 176.9 160 198.2 160zM480.3 480L413.9 480L413.9 376C413.9 351.2 413.4 319.3 379.4 319.3C344.8 319.3 339.5 346.3 339.5 374.2L339.5 480L273.1 480L273.1 266.2L336.8 266.2L336.8 295.4L337.7 295.4C346.6 278.6 368.3 260.9 400.6 260.9C467.8 260.9 480.3 305.2 480.3 362.8L480.3 480z"/></svg></div>
+        <span class="site-footer__social-label">LinkedIn</span>
+      </a>
+      <a class="site-footer__social-link" href="mailto:jmpargana@gmail.com" aria-label="Email">
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-16 -16 96 96">
+    <g transform="scale(1, 1.25) translate(0, -6)">
+      <path fill="currentColor" d="M32,34.934L63.617,10.34C62.984,8.965,61.613,8,60,8H4c-1.613,0-2.984,0.965-3.617,2.34L32,34.934z"/>
+      <path fill="currentColor" d="M34.457,43.156C33.734,43.719,32.867,44,32,44s-1.734-0.281-2.457-0.844L0,20.18V52c0,2.211,1.789,4,4,4h56c2.211,0,4-1.789,4-4V20.18L34.457,43.156z"/>
+    </g>
+  </svg></div>
+        <span class="site-footer__social-label">Email</span>
+      </a>
+    </div>
+  </div>
+</footer>
+
+  </footer>
+  
+</body>
+</html>

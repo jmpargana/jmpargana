@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CKAD - 1 - Foundations | jmpargana</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+      <link rel="stylesheet" href="/css/bundle.min.c1599c5493bbe49ded20afa3256a84c69c27cd93559a873db20cc6dde99f02b9.css" integrity="sha256-wVmcVJO75J3tIK&#43;jJWqExpwnzZNVmoc9sgzG3emfArk=" crossorigin="anonymous">
+
+      <script defer src="/js/bundle.1c4d05a365cf3733c689a1a0696987451207f55155c2abd230d616e088f09b4c.js" integrity="sha256-HE0Fo2XPNzPGiaGgaWmHRRIH9VFVwqvSMNYW4Ijwm0w=" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+  
+  <header>
+    <div class="container-header">
+  <div class="site-header">
+    <a class="title-header" href="/">jmpargana</a>
+    <div class="header-center">
+      
+  <nav class="nav-container">
+    <ul class="nav-menu">
+    <li class="nav-item">
+      <a href="/about/">About</a>
+    </li>
+    <li class="nav-item">
+      <a href="/posts/">Blog</a>
+    </li>
+    </ul>
+  </nav>
+
+    </div>
+    <div class="header-actions">
+      <button class="theme-toggle" type="button" aria-label="Toggle color theme" aria-pressed="false" title="Toggle color theme">
+        <span class="theme-toggle-icon" aria-hidden="true">◐</span>
+      </button>
+      <button class="header-menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">≡</button>
+    </div>
+  </div>
+</div>
+
+
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+  <div class="mobile-nav__backdrop"></div>
+  <nav class="mobile-nav__panel" role="navigation" aria-label="Mobile navigation">
+    <button class="mobile-nav__close" type="button" aria-label="Close menu">✕</button>
+    <ul class="mobile-nav__list">
+      
+        <li class="mobile-nav__item">
+          <a class="mobile-nav__link" href="/about/">About</a>
+        </li>
+      
+        <li class="mobile-nav__item">
+          <a class="mobile-nav__link" href="/posts/">Blog</a>
+        </li>
+      
+    </ul>
+    <div class="mobile-nav__social">
+      <a class="mobile-nav__social-link" href="https://github.com/jmpargana/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="currentColor" d="M237.9 461.4C237.9 463.4 235.6 465 232.7 465C229.4 465.3 227.1 463.7 227.1 461.4C227.1 459.4 229.4 457.8 232.3 457.8C235.3 457.5 237.9 459.1 237.9 461.4zM206.8 456.9C206.1 458.9 208.1 461.2 211.1 461.8C213.7 462.8 216.7 461.8 217.3 459.8C217.9 457.8 216 455.5 213 454.6C210.4 453.9 207.5 454.9 206.8 456.9zM251 455.2C248.1 455.9 246.1 457.8 246.4 460.1C246.7 462.1 249.3 463.4 252.3 462.7C255.2 462 257.2 460.1 256.9 458.1C256.6 456.2 253.9 454.9 251 455.2zM316.8 72C178.1 72 72 177.3 72 316C72 426.9 141.8 521.8 241.5 555.2C254.3 557.5 258.8 549.6 258.8 543.1C258.8 536.9 258.5 502.7 258.5 481.7C258.5 481.7 188.5 496.7 173.8 451.9C173.8 451.9 162.4 422.8 146 415.3C146 415.3 123.1 399.6 147.6 399.9C147.6 399.9 172.5 401.9 186.2 425.7C208.1 464.3 244.8 453.2 259.1 446.6C261.4 430.6 267.9 419.5 275.1 412.9C219.2 406.7 162.8 398.6 162.8 302.4C162.8 274.9 170.4 261.1 186.4 243.5C183.8 237 175.3 210.2 189 175.6C209.9 169.1 258 202.6 258 202.6C278 197 299.5 194.1 320.8 194.1C342.1 194.1 363.6 197 383.6 202.6C383.6 202.6 431.7 169 452.6 175.6C466.3 210.3 457.8 237 455.2 243.5C471.2 261.2 481 275 481 302.4C481 398.9 422.1 406.6 366.2 412.9C375.4 420.8 383.2 435.8 383.2 459.3C383.2 493 382.9 534.7 382.9 542.9C382.9 549.4 387.5 557.3 400.2 555C500.2 521.8 568 426.9 568 316C568 177.3 455.5 72 316.8 72zM169.2 416.9C167.9 417.9 168.2 420.2 169.9 422.1C171.5 423.7 173.8 424.4 175.1 423.1C176.4 422.1 176.1 419.8 174.4 417.9C172.8 416.3 170.5 415.6 169.2 416.9zM158.4 408.8C157.7 410.1 158.7 411.7 160.7 412.7C162.3 413.7 164.3 413.4 165 412C165.7 410.7 164.7 409.1 162.7 408.1C160.7 407.5 159.1 407.8 158.4 408.8zM190.8 444.4C189.2 445.7 189.8 448.7 192.1 450.6C194.4 452.9 197.3 453.2 198.6 451.6C199.9 450.3 199.3 447.3 197.3 445.4C195.1 443.1 192.1 442.8 190.8 444.4zM179.4 429.7C177.8 430.7 177.8 433.3 179.4 435.6C181 437.9 183.7 438.9 185 437.9C186.6 436.6 186.6 434 185 431.7C183.6 429.4 181 428.4 179.4 429.7z"/></svg></div>
+        <span>GitHub</span>
+      </a>
+      <a class="mobile-nav__social-link" href="https://linkedin.com/in/jmpargana" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="currentColor" d="M512 96L127.9 96C110.3 96 96 110.5 96 128.3L96 511.7C96 529.5 110.3 544 127.9 544L512 544C529.6 544 544 529.5 544 511.7L544 128.3C544 110.5 529.6 96 512 96zM231.4 480L165 480L165 266.2L231.5 266.2L231.5 480L231.4 480zM198.2 160C219.5 160 236.7 177.2 236.7 198.5C236.7 219.8 219.5 237 198.2 237C176.9 237 159.7 219.8 159.7 198.5C159.7 177.2 176.9 160 198.2 160zM480.3 480L413.9 480L413.9 376C413.9 351.2 413.4 319.3 379.4 319.3C344.8 319.3 339.5 346.3 339.5 374.2L339.5 480L273.1 480L273.1 266.2L336.8 266.2L336.8 295.4L337.7 295.4C346.6 278.6 368.3 260.9 400.6 260.9C467.8 260.9 480.3 305.2 480.3 362.8L480.3 480z"/></svg></div>
+        <span>LinkedIn</span>
+      </a>
+      <a class="mobile-nav__social-link" href="mailto:jmpargana@gmail.com" aria-label="Email">
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-16 -16 96 96">
+    <g transform="scale(1, 1.25) translate(0, -6)">
+      <path fill="currentColor" d="M32,34.934L63.617,10.34C62.984,8.965,61.613,8,60,8H4c-1.613,0-2.984,0.965-3.617,2.34L32,34.934z"/>
+      <path fill="currentColor" d="M34.457,43.156C33.734,43.719,32.867,44,32,44s-1.734-0.281-2.457-0.844L0,20.18V52c0,2.211,1.789,4,4,4h56c2.211,0,4-1.789,4-4V20.18L34.457,43.156z"/>
+    </g>
+  </svg></div>
+        <span>Email</span>
+      </a>
+    </div>
+  </nav>
+</div>
+
+  </header>
+  
+  <main>
+    
+  
+  <div class="content article-view">
+    <div class="article-frame">
+      <div class="article-back">
+        <a class="article-back-link" href="/posts/">
+          <svg class="article-back-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="19" y1="12" x2="5" y2="12"/>
+            <polyline points="12 19 5 12 12 5"/>
+          </svg>
+          <span>BACK TO ARCHIVES</span>
+        </a>
+      </div>
+
+      
+
+<header class="article-header">
+  <div class="article-kicker-row">
+    <span class="article-kicker">Issue No. 227</span>
+    <span class="article-kicker-line" aria-hidden="true"></span>
+    <time class="article-kicker-date" datetime="2024-08-14T15:05:23&#43;01:00">Aug 14, 2024</time>
+  </div>
+  <h1 class="article-title">CKAD - 1 - Foundations</h1>
+  
+</header>
+
+      <article class="article-body">
+        <p>Welcome! In this series you&rsquo;ll read along my journey to CKAD certification. You can expect
+high-level knowledge sharing and hopefully some useful tips.</p>
+<h2 id="picking-the-course">Picking the course</h2>
+<p>Visiting the <a href="https://training.linuxfoundation.org/certification/certified-kubernetes-application-developer-ckad/">linux foundation</a>, you&rsquo;ll see a suggested package, which includes a course, an annual subscription, and more.</p>
+<p>After getting advise from colleagues who are already certified, I decided to follow a different course instead, on <a href="https://www.udemy.com/course/certified-kubernetes-application-developer/learn/lecture/28376970#overview">Udemy</a>.</p>
+<p>Not only does this have close to 5 star reviews, it&rsquo;s significantly cheaper. I purchased it with a discount of 80% (at around $11).</p>
+<h2 id="first-impressions">First impressions</h2>
+<p>I&rsquo;ve only just started. After completing the <em>Section 2: Core Concepts</em>, I&rsquo;m already very impressed with the instructor.
+Even though I&rsquo;ve been using Kubernetes professionally and dealing with it daily—debugging, deploying, securing—the course is the first time I&rsquo;ve understood core concepts that make the documentation and manifest development much clearer.</p>
+<p>Also, since the course is heavily focused on <code>kubectl</code>, I&rsquo;ve stopped relying on <code>k9s</code> as a daily dependency and am now comfortable using <code>kubectl</code> directly.</p>
+<h3 id="manifest-skeleton">Manifest skeleton</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">string</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">Kind</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">metadata</span><span class="p">:</span><span class="w"> </span><span class="l">map[string]any</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">spec</span><span class="p">:</span><span class="w"> </span><span class="l">any</span><span class="w">
+</span></span></span></code></pre></div><p>Each manifest always has the 4 components listed above.</p>
+<p><code>Kind</code> is anything either available in the kubernetes API (ex. <code>Pod</code>, <code>Service</code>, <code>ReplicaSet</code>, etc.) or it&rsquo;s something custom defined (or a <em>CRD</em>).</p>
+<p><code>spec</code>, the most important field, is strongly typed and needs to match it&rsquo;s <code>Kind</code>.</p>
+<blockquote>
+<p>NOTE: In future posts I&rsquo;ll go more in depth with <code>apiVersion</code>, <code>kind</code> and <code>spec</code>. Understanding these fields is all about understanding how Kubernetes exposes it&rsquo;s API and how you can enhance it.</p>
+</blockquote>
+<h3 id="kubernetes-api-references">Kubernetes API References</h3>
+<p>My motivation to explore the documentation can be split in 2 points.</p>
+<h4 id="llms">LLMs</h4>
+<p>In my quest to become a better software engineer, I want to fight the constant urge of finding the <em>easy</em> solution. For most questions I have, instead of searching for a response on StackOverflow, on Guides, articles, I end up going for the easy thing: asking the latest most powerful model.</p>
+<p>This is sadly becoming a recurring event. Much more serious than using <code>k9s</code> as a clutch.</p>
+<p>One way I&rsquo;m trying to break out of that cycle is to find the information in 2 sources. Either the official documentation or directly in the source code.</p>
+<h4 id="certificate">Certificate</h4>
+<p>My second motivation is during the certification one only has access to the documentation. So ideally, you should become well versed in it&rsquo;s structure to find your way around.</p>
+<h4 id="reference">Reference</h4>
+<p>Well, the docs are massive. You have over 1000 pages, but the API reference, as it&rsquo;s automatically generated, is quite intuitive. It feels like navigating code.</p>
+<p>You start of in the <a href="https://kubernetes.io/docs/reference/kubernetes-api/">References &gt; Kubernetes API</a> submodule. If you can&rsquo;t find it straight away in the categories, you can simply search for a title (ex. <code>Pods</code>).</p>
+<p>Every documentation that is not a reference, contains an API reference on top-right corner saying <code>X API</code>. Clicking it, you&rsquo;ll see exactly what&rsquo;s expected in the spec.</p>
+<p>Here&rsquo;s the example for <code>Pod</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">PodSpec</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">Containers</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l">string</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">Image</span><span class="p">:</span><span class="w"> </span><span class="l">string</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="l">// ... plenty more</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">Volumes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">Scheduling</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="l">// ... plenty more</span><span class="w">
+</span></span></span></code></pre></div><p>You&rsquo;ll be able to understand exactly what the required fields are and how what data is expected.</p>
+<h3 id="imperative-commands">Imperative commands</h3>
+<p>The 3rd valuable lesson is using <em>imperative commands</em> to quickly generate YAML manifest boilerplate. While you can add all necessary flags for a complete resource definition, you can quickly generate templates for most common debugging scenarios.</p>
+<p>Before I start dumping all the information I&rsquo;ve learned so far, there&rsquo;s 2 important flags that come in handy when using imperative commands.</p>
+<ol>
+<li><code>--dry-run=client</code> -&gt; does not create any resources yet, just outputs the result</li>
+<li><code>-o yaml</code> -&gt; dumps the exact yaml manifest needed</li>
+</ol>
+<h4 id="pods">Pods</h4>
+<p>As pods are working resources, you can <em>run</em> them:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ kubectl run nginx --image nginx --dry-run<span class="o">=</span>client -o yaml
+</span></span><span class="line"><span class="cl">apiVersion: v1
+</span></span><span class="line"><span class="cl">kind: Pod
+</span></span><span class="line"><span class="cl">metadata:
+</span></span><span class="line"><span class="cl">  creationTimestamp: null
+</span></span><span class="line"><span class="cl">  labels:
+</span></span><span class="line"><span class="cl">    run: nginx
+</span></span><span class="line"><span class="cl">  name: nginx
+</span></span><span class="line"><span class="cl">spec:
+</span></span><span class="line"><span class="cl">  containers:
+</span></span><span class="line"><span class="cl">  - image: nginx
+</span></span><span class="line"><span class="cl">    name: nginx
+</span></span><span class="line"><span class="cl">    resources: <span class="o">{}</span>
+</span></span><span class="line"><span class="cl">  dnsPolicy: ClusterFirst
+</span></span><span class="line"><span class="cl">  restartPolicy: Always
+</span></span><span class="line"><span class="cl">status: <span class="o">{}</span>
+</span></span></code></pre></div><p>For <code>Deployments</code> you need to <em>create</em>. As with other commands in <code>kubectl</code> you can opt for the short form:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ kubectl create deploy nginx-deploy --image nginx --replicas <span class="m">4</span> --dry-run<span class="o">=</span>client -o yaml
+</span></span><span class="line"><span class="cl">apiVersion: apps/v1
+</span></span><span class="line"><span class="cl">kind: Deployment
+</span></span><span class="line"><span class="cl">metadata:
+</span></span><span class="line"><span class="cl">  creationTimestamp: null
+</span></span><span class="line"><span class="cl">  labels:
+</span></span><span class="line"><span class="cl">    app: nginx-deploy
+</span></span><span class="line"><span class="cl">  name: nginx-deploy
+</span></span><span class="line"><span class="cl">spec:
+</span></span><span class="line"><span class="cl">  replicas: <span class="m">4</span>
+</span></span><span class="line"><span class="cl">  selector:
+</span></span><span class="line"><span class="cl">    matchLabels:
+</span></span><span class="line"><span class="cl">      app: nginx-deploy
+</span></span><span class="line"><span class="cl">  strategy: <span class="o">{}</span>
+</span></span><span class="line"><span class="cl">  template:
+</span></span><span class="line"><span class="cl">    metadata:
+</span></span><span class="line"><span class="cl">      creationTimestamp: null
+</span></span><span class="line"><span class="cl">      labels:
+</span></span><span class="line"><span class="cl">        app: nginx-deploy
+</span></span><span class="line"><span class="cl">    spec:
+</span></span><span class="line"><span class="cl">      containers:
+</span></span><span class="line"><span class="cl">      - image: nginx
+</span></span><span class="line"><span class="cl">        name: nginx
+</span></span><span class="line"><span class="cl">        resources: <span class="o">{}</span>
+</span></span><span class="line"><span class="cl">status: <span class="o">{}</span>
+</span></span></code></pre></div><p>As you can probably notice, the selector labels and pod metadata match, so that&rsquo;s one less thing you need to check on.</p>
+<p>For services there are multiple ways, I&rsquo;ll show an alternative to <code>create</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ kubectl expose pod redis --port<span class="o">=</span><span class="m">6379</span> --name redis-svc --dry-run<span class="o">=</span>client -o yaml
+</span></span><span class="line"><span class="cl">apiVersion: v1
+</span></span><span class="line"><span class="cl">kind: Service
+</span></span><span class="line"><span class="cl">metadata:
+</span></span><span class="line"><span class="cl">  creationTimestamp: null
+</span></span><span class="line"><span class="cl">  labels:
+</span></span><span class="line"><span class="cl">    run: redis
+</span></span><span class="line"><span class="cl">  name: redis-svc
+</span></span><span class="line"><span class="cl">spec:
+</span></span><span class="line"><span class="cl">  ports:
+</span></span><span class="line"><span class="cl">  - port: <span class="m">6379</span>
+</span></span><span class="line"><span class="cl">    protocol: TCP
+</span></span><span class="line"><span class="cl">    targetPort: <span class="m">6379</span>
+</span></span><span class="line"><span class="cl">  selector:
+</span></span><span class="line"><span class="cl">    run: redis
+</span></span><span class="line"><span class="cl">status:
+</span></span><span class="line"><span class="cl">  loadBalancer: <span class="o">{}</span>
+</span></span></code></pre></div><p>And for namespace, you can also do it very quickly:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ kubectl create ns ns-test --dry-run<span class="o">=</span>client -o yaml
+</span></span><span class="line"><span class="cl">apiVersion: v1
+</span></span><span class="line"><span class="cl">kind: Namespace
+</span></span><span class="line"><span class="cl">metadata:
+</span></span><span class="line"><span class="cl">  creationTimestamp: null
+</span></span><span class="line"><span class="cl">  name: ns-test
+</span></span><span class="line"><span class="cl">spec: <span class="o">{}</span>
+</span></span><span class="line"><span class="cl">status: <span class="o">{}</span>
+</span></span></code></pre></div><p>You can always pipe these yaml to files that you edit further before applying, or you don&rsquo;t even have to worry about the output if you simply want to validate the typing. Doing a <code>--dry-run</code> will give you feedback if the types are correct.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>These were the first learnings, but here comes a recommendation. The only reason I can remember them all so well is because of the practicing labs that come with the udemy course.</p>
+<p>Playing around with quickly creating all kinds of resources, even debugging some pods on your dev cluster.</p>
+
+      </article>
+
+      
+        <div class="article-tags"><span class="article-chip article-chip-10">certification</span><span class="article-chip article-chip-0">kubernetes</span>
+        </div>
+      
+
+    </div>
+  </div>
+
+  </main>
+  
+  <footer>
+    <footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__brand">
+      <div class="site-footer__copy">© 2026 MIT Licensed.</div>
+      <div class="site-footer__tagline">Joao Pargana Blog & Site</div>
+    </div>
+    <div class="site-footer__social">
+      <a class="site-footer__social-link" href="https://github.com/jmpargana/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="currentColor" d="M237.9 461.4C237.9 463.4 235.6 465 232.7 465C229.4 465.3 227.1 463.7 227.1 461.4C227.1 459.4 229.4 457.8 232.3 457.8C235.3 457.5 237.9 459.1 237.9 461.4zM206.8 456.9C206.1 458.9 208.1 461.2 211.1 461.8C213.7 462.8 216.7 461.8 217.3 459.8C217.9 457.8 216 455.5 213 454.6C210.4 453.9 207.5 454.9 206.8 456.9zM251 455.2C248.1 455.9 246.1 457.8 246.4 460.1C246.7 462.1 249.3 463.4 252.3 462.7C255.2 462 257.2 460.1 256.9 458.1C256.6 456.2 253.9 454.9 251 455.2zM316.8 72C178.1 72 72 177.3 72 316C72 426.9 141.8 521.8 241.5 555.2C254.3 557.5 258.8 549.6 258.8 543.1C258.8 536.9 258.5 502.7 258.5 481.7C258.5 481.7 188.5 496.7 173.8 451.9C173.8 451.9 162.4 422.8 146 415.3C146 415.3 123.1 399.6 147.6 399.9C147.6 399.9 172.5 401.9 186.2 425.7C208.1 464.3 244.8 453.2 259.1 446.6C261.4 430.6 267.9 419.5 275.1 412.9C219.2 406.7 162.8 398.6 162.8 302.4C162.8 274.9 170.4 261.1 186.4 243.5C183.8 237 175.3 210.2 189 175.6C209.9 169.1 258 202.6 258 202.6C278 197 299.5 194.1 320.8 194.1C342.1 194.1 363.6 197 383.6 202.6C383.6 202.6 431.7 169 452.6 175.6C466.3 210.3 457.8 237 455.2 243.5C471.2 261.2 481 275 481 302.4C481 398.9 422.1 406.6 366.2 412.9C375.4 420.8 383.2 435.8 383.2 459.3C383.2 493 382.9 534.7 382.9 542.9C382.9 549.4 387.5 557.3 400.2 555C500.2 521.8 568 426.9 568 316C568 177.3 455.5 72 316.8 72zM169.2 416.9C167.9 417.9 168.2 420.2 169.9 422.1C171.5 423.7 173.8 424.4 175.1 423.1C176.4 422.1 176.1 419.8 174.4 417.9C172.8 416.3 170.5 415.6 169.2 416.9zM158.4 408.8C157.7 410.1 158.7 411.7 160.7 412.7C162.3 413.7 164.3 413.4 165 412C165.7 410.7 164.7 409.1 162.7 408.1C160.7 407.5 159.1 407.8 158.4 408.8zM190.8 444.4C189.2 445.7 189.8 448.7 192.1 450.6C194.4 452.9 197.3 453.2 198.6 451.6C199.9 450.3 199.3 447.3 197.3 445.4C195.1 443.1 192.1 442.8 190.8 444.4zM179.4 429.7C177.8 430.7 177.8 433.3 179.4 435.6C181 437.9 183.7 438.9 185 437.9C186.6 436.6 186.6 434 185 431.7C183.6 429.4 181 428.4 179.4 429.7z"/></svg></div>
+        <span class="site-footer__social-label">GitHub</span>
+      </a>
+      <a class="site-footer__social-link" href="https://www.linkedin.com/in/jo%C3%A3o-pargana-9757b91b2/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="currentColor" d="M512 96L127.9 96C110.3 96 96 110.5 96 128.3L96 511.7C96 529.5 110.3 544 127.9 544L512 544C529.6 544 544 529.5 544 511.7L544 128.3C544 110.5 529.6 96 512 96zM231.4 480L165 480L165 266.2L231.5 266.2L231.5 480L231.4 480zM198.2 160C219.5 160 236.7 177.2 236.7 198.5C236.7 219.8 219.5 237 198.2 237C176.9 237 159.7 219.8 159.7 198.5C159.7 177.2 176.9 160 198.2 160zM480.3 480L413.9 480L413.9 376C413.9 351.2 413.4 319.3 379.4 319.3C344.8 319.3 339.5 346.3 339.5 374.2L339.5 480L273.1 480L273.1 266.2L336.8 266.2L336.8 295.4L337.7 295.4C346.6 278.6 368.3 260.9 400.6 260.9C467.8 260.9 480.3 305.2 480.3 362.8L480.3 480z"/></svg></div>
+        <span class="site-footer__social-label">LinkedIn</span>
+      </a>
+      <a class="site-footer__social-link" href="mailto:jmpargana@gmail.com" aria-label="Email">
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-16 -16 96 96">
+    <g transform="scale(1, 1.25) translate(0, -6)">
+      <path fill="currentColor" d="M32,34.934L63.617,10.34C62.984,8.965,61.613,8,60,8H4c-1.613,0-2.984,0.965-3.617,2.34L32,34.934z"/>
+      <path fill="currentColor" d="M34.457,43.156C33.734,43.719,32.867,44,32,44s-1.734-0.281-2.457-0.844L0,20.18V52c0,2.211,1.789,4,4,4h56c2.211,0,4-1.789,4-4V20.18L34.457,43.156z"/>
+    </g>
+  </svg></div>
+        <span class="site-footer__social-label">Email</span>
+      </a>
+    </div>
+  </div>
+</footer>
+
+  </footer>
+  
+</body>
+</html>

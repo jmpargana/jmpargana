@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OAuth2 Explained | jmpargana</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+      <link rel="stylesheet" href="/css/bundle.min.c1599c5493bbe49ded20afa3256a84c69c27cd93559a873db20cc6dde99f02b9.css" integrity="sha256-wVmcVJO75J3tIK&#43;jJWqExpwnzZNVmoc9sgzG3emfArk=" crossorigin="anonymous">
+
+      <script defer src="/js/bundle.1c4d05a365cf3733c689a1a0696987451207f55155c2abd230d616e088f09b4c.js" integrity="sha256-HE0Fo2XPNzPGiaGgaWmHRRIH9VFVwqvSMNYW4Ijwm0w=" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+  
+  <header>
+    <div class="container-header">
+  <div class="site-header">
+    <a class="title-header" href="/">jmpargana</a>
+    <div class="header-center">
+      
+  <nav class="nav-container">
+    <ul class="nav-menu">
+    <li class="nav-item">
+      <a href="/about/">About</a>
+    </li>
+    <li class="nav-item">
+      <a href="/posts/">Blog</a>
+    </li>
+    </ul>
+  </nav>
+
+    </div>
+    <div class="header-actions">
+      <button class="theme-toggle" type="button" aria-label="Toggle color theme" aria-pressed="false" title="Toggle color theme">
+        <span class="theme-toggle-icon" aria-hidden="true">◐</span>
+      </button>
+      <button class="header-menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">≡</button>
+    </div>
+  </div>
+</div>
+
+
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+  <div class="mobile-nav__backdrop"></div>
+  <nav class="mobile-nav__panel" role="navigation" aria-label="Mobile navigation">
+    <button class="mobile-nav__close" type="button" aria-label="Close menu">✕</button>
+    <ul class="mobile-nav__list">
+      
+        <li class="mobile-nav__item">
+          <a class="mobile-nav__link" href="/about/">About</a>
+        </li>
+      
+        <li class="mobile-nav__item">
+          <a class="mobile-nav__link" href="/posts/">Blog</a>
+        </li>
+      
+    </ul>
+    <div class="mobile-nav__social">
+      <a class="mobile-nav__social-link" href="https://github.com/jmpargana/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="currentColor" d="M237.9 461.4C237.9 463.4 235.6 465 232.7 465C229.4 465.3 227.1 463.7 227.1 461.4C227.1 459.4 229.4 457.8 232.3 457.8C235.3 457.5 237.9 459.1 237.9 461.4zM206.8 456.9C206.1 458.9 208.1 461.2 211.1 461.8C213.7 462.8 216.7 461.8 217.3 459.8C217.9 457.8 216 455.5 213 454.6C210.4 453.9 207.5 454.9 206.8 456.9zM251 455.2C248.1 455.9 246.1 457.8 246.4 460.1C246.7 462.1 249.3 463.4 252.3 462.7C255.2 462 257.2 460.1 256.9 458.1C256.6 456.2 253.9 454.9 251 455.2zM316.8 72C178.1 72 72 177.3 72 316C72 426.9 141.8 521.8 241.5 555.2C254.3 557.5 258.8 549.6 258.8 543.1C258.8 536.9 258.5 502.7 258.5 481.7C258.5 481.7 188.5 496.7 173.8 451.9C173.8 451.9 162.4 422.8 146 415.3C146 415.3 123.1 399.6 147.6 399.9C147.6 399.9 172.5 401.9 186.2 425.7C208.1 464.3 244.8 453.2 259.1 446.6C261.4 430.6 267.9 419.5 275.1 412.9C219.2 406.7 162.8 398.6 162.8 302.4C162.8 274.9 170.4 261.1 186.4 243.5C183.8 237 175.3 210.2 189 175.6C209.9 169.1 258 202.6 258 202.6C278 197 299.5 194.1 320.8 194.1C342.1 194.1 363.6 197 383.6 202.6C383.6 202.6 431.7 169 452.6 175.6C466.3 210.3 457.8 237 455.2 243.5C471.2 261.2 481 275 481 302.4C481 398.9 422.1 406.6 366.2 412.9C375.4 420.8 383.2 435.8 383.2 459.3C383.2 493 382.9 534.7 382.9 542.9C382.9 549.4 387.5 557.3 400.2 555C500.2 521.8 568 426.9 568 316C568 177.3 455.5 72 316.8 72zM169.2 416.9C167.9 417.9 168.2 420.2 169.9 422.1C171.5 423.7 173.8 424.4 175.1 423.1C176.4 422.1 176.1 419.8 174.4 417.9C172.8 416.3 170.5 415.6 169.2 416.9zM158.4 408.8C157.7 410.1 158.7 411.7 160.7 412.7C162.3 413.7 164.3 413.4 165 412C165.7 410.7 164.7 409.1 162.7 408.1C160.7 407.5 159.1 407.8 158.4 408.8zM190.8 444.4C189.2 445.7 189.8 448.7 192.1 450.6C194.4 452.9 197.3 453.2 198.6 451.6C199.9 450.3 199.3 447.3 197.3 445.4C195.1 443.1 192.1 442.8 190.8 444.4zM179.4 429.7C177.8 430.7 177.8 433.3 179.4 435.6C181 437.9 183.7 438.9 185 437.9C186.6 436.6 186.6 434 185 431.7C183.6 429.4 181 428.4 179.4 429.7z"/></svg></div>
+        <span>GitHub</span>
+      </a>
+      <a class="mobile-nav__social-link" href="https://linkedin.com/in/jmpargana" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="currentColor" d="M512 96L127.9 96C110.3 96 96 110.5 96 128.3L96 511.7C96 529.5 110.3 544 127.9 544L512 544C529.6 544 544 529.5 544 511.7L544 128.3C544 110.5 529.6 96 512 96zM231.4 480L165 480L165 266.2L231.5 266.2L231.5 480L231.4 480zM198.2 160C219.5 160 236.7 177.2 236.7 198.5C236.7 219.8 219.5 237 198.2 237C176.9 237 159.7 219.8 159.7 198.5C159.7 177.2 176.9 160 198.2 160zM480.3 480L413.9 480L413.9 376C413.9 351.2 413.4 319.3 379.4 319.3C344.8 319.3 339.5 346.3 339.5 374.2L339.5 480L273.1 480L273.1 266.2L336.8 266.2L336.8 295.4L337.7 295.4C346.6 278.6 368.3 260.9 400.6 260.9C467.8 260.9 480.3 305.2 480.3 362.8L480.3 480z"/></svg></div>
+        <span>LinkedIn</span>
+      </a>
+      <a class="mobile-nav__social-link" href="mailto:jmpargana@gmail.com" aria-label="Email">
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-16 -16 96 96">
+    <g transform="scale(1, 1.25) translate(0, -6)">
+      <path fill="currentColor" d="M32,34.934L63.617,10.34C62.984,8.965,61.613,8,60,8H4c-1.613,0-2.984,0.965-3.617,2.34L32,34.934z"/>
+      <path fill="currentColor" d="M34.457,43.156C33.734,43.719,32.867,44,32,44s-1.734-0.281-2.457-0.844L0,20.18V52c0,2.211,1.789,4,4,4h56c2.211,0,4-1.789,4-4V20.18L34.457,43.156z"/>
+    </g>
+  </svg></div>
+        <span>Email</span>
+      </a>
+    </div>
+  </nav>
+</div>
+
+  </header>
+  
+  <main>
+    
+  
+  <div class="content article-view">
+    <div class="article-frame">
+      <div class="article-back">
+        <a class="article-back-link" href="/posts/">
+          <svg class="article-back-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="19" y1="12" x2="5" y2="12"/>
+            <polyline points="12 19 5 12 12 5"/>
+          </svg>
+          <span>BACK TO ARCHIVES</span>
+        </a>
+      </div>
+
+      
+
+<header class="article-header">
+  <div class="article-kicker-row">
+    <span class="article-kicker">Issue No. 064</span>
+    <span class="article-kicker-line" aria-hidden="true"></span>
+    <time class="article-kicker-date" datetime="2026-03-05T22:03:54&#43;01:00">Mar 5, 2026</time>
+  </div>
+  <h1 class="article-title">OAuth2 Explained</h1>
+  
+</header>
+
+      <article class="article-body">
+        <p>I&rsquo;ve recently integrated a provider and consumer service with Azure AD and B2C. Setting up the scopes was confusing and since I&rsquo;ve felt that although I&rsquo;ve been using OAuth in my systems for a long time, I haven&rsquo;t really understood it well, I decided to invest some time and really learn how it works under the hood.</p>
+<p>I could tell you that reading the various RFCs offered me clarity, but I&rsquo;d be lying. The key point of why they didn&rsquo;t, it&rsquo;s because there isn&rsquo;t a single cohesive document explaining the core concepts. It&rsquo;s spread around multiple ones:</p>
+<ul>
+<li>RFC 6750 defines how tokens are actually used</li>
+<li>RFC 7636 patches a major authorization code vulnerability</li>
+<li>RFC 8252 redefines best practices for mobile/desktop</li>
+<li>RFC 8414 adds discovery</li>
+<li>RFC 6819 explains security assumptions after the fact</li>
+</ul>
+<h2 id="oauth2-in-action">OAuth2 in Action</h2>
+<p>After some research I landed on <a href="https://www.manning.com/books/oauth-2-in-action">this book</a>. It does a good job explaining the fundamentals, giving clear implementation details on all entities and a complete set of security issues and gaps in the framework.</p>
+<p>I&rsquo;ll try to explain in very simple terms how the frameworks and forward you to another implementation post by the end, so you learn how it works under-the-hood.</p>
+<h2 id="basics">Basics</h2>
+<p>OAuth2 is not a protocol, but a framework of protocols. Because it&rsquo;s an abstraction, it has different implementations, each focused on a particular usecase.</p>
+<p>The abstraction revolves around <strong>delegating authorization</strong> to obtain <strong>limited access</strong> to a <em>resource server</em> on behalf of <em>resource owner</em> without sharing credentials.</p>
+<p>Let&rsquo;s unpack that.</p>
+<p>OAuth2 is <strong>not</strong> about authentication. A commonly misunderstood aspect is that developers often try to use OAuth2 for authentication because of its flexibility, and libraries now exist that support this pattern (more on this later).</p>
+<p>Let&rsquo;s pick a simple example. You have some photos stored in a server. You have your credentials to access that server. Now another service, let&rsquo;s say a printer service, wants to access <strong>your</strong> photos in order to print them for you. You could either download them and provide to the printer service. You could share your storage credentials, so the printing service would download them for you, <em>or</em> you could leverage oauth. You generate a <em>token</em>, where you allow the printing service to download those photos.</p>
+<p>That is the <strong>main kind of authorization designed for OAuth2</strong>. Everything else is an adaption, where you or a developer disguises a flow as something that can be represented this way.</p>
+<h2 id="actors">Actors</h2>
+<p>OAuth2 is designed around four actors:</p>
+<ul>
+<li>Resource owner</li>
+<li>Protected resource</li>
+<li>Authorization manager</li>
+<li>Client</li>
+</ul>
+<p>Resource owner can be anything. It&rsquo;s more likely to be a user, but it could also be a service. The protected resource usually sits behind a service and is sometimes called <em>resource server</em>. The client can be a server as well.</p>
+<p>The flow is simple:</p>
+<ol>
+<li>Client requests resource owner authorization to access protected resource</li>
+<li>Resource owner informs authorization manager that he allows that access</li>
+<li>Authorization manager issues <em>token</em> and shares it with client</li>
+<li>Client requests protected resource with <em>token</em></li>
+</ol>
+<h2 id="token">Token</h2>
+<p>You might have noticed. The whole framework revolves around a <em>token</em>, which is a representation of something that has limited access and is issued per client per resource owner per protected resource, but what is a <em>token</em> exactly?</p>
+<p>The OAuth2 specification doesn&rsquo;t define exactly what a token should be. It defines principles such as: tokens should not be easily guessable, they should be short-lived, and so on.</p>
+<p>We&rsquo;ll get to JWT later in this article, but for now let&rsquo;s focus on the flows, despite of token implementation.</p>
+<h2 id="grants">Grants</h2>
+<p>As the actors can be different things, there are predefined flows, also called grant types, to represent the most usual ones. In some of them not all actors are there. In other multiple actors are the same one. We&rsquo;ll start looking at those cases first, as they have the easiest flow.</p>
+<p>For each of the flows, a specific <code>grant_type</code> value is passed in the payload.</p>
+<h3 id="client-credentials">Client credentials</h3>
+<p><code>grant_type: client</code></p>
+<p>When the resource owner is not important, your grant doesn&rsquo;t need to dance between resource owner, client and authorisation manager, it can directly call the authorisation manager with it&rsquo;s credentials to request a token generation. The authorisation manager validates the credentials and generates a token, which is then used to call the protected resource.</p>
+<p>Here&rsquo;s the list of steps:</p>
+<ol>
+<li>Client calls auth server with <code>client_id</code> and <code>client_secret</code></li>
+<li>Auth server responds with token</li>
+<li>Client calls resource server with token</li>
+<li>Resource server validates token</li>
+</ol>
+<p>The client credentials can be passed in multiple ways. Either in the body or as an auth header. The auth header with base64 encoding seems to be the prefered version (documented in cloud providers).</p>
+<h3 id="implicit">Implicit</h3>
+<p><code>grant_type: implicit</code></p>
+<p>When the resource owner and the client are the same, aka. your client application lives in the browser and represents the user, you can use this grant type.</p>
+<p>This grant was created for a simplification of the authorization code grant, but has been deemed insecure and only relevant in few situations. We&rsquo;ll skip this one for now.</p>
+<h3 id="assertion">Assertion</h3>
+<p><code>grant_type: assertion</code></p>
+<p>Also known as <em>On Behalf Of</em> flow. The resource owner is already being represented by the client, which wants to propagate it to another resource server.</p>
+<p>You call the authorisation server with the token you&rsquo;re carrying so it generates a new one based on that.</p>
+<h3 id="resource-owner">Resource Owner</h3>
+<p><code>grant_type: password</code></p>
+<p>This one was really just created to provide a stepping stone to OAuth2 adopters that were relying on basic <code>user:password</code> header. It&rsquo;s not recommended as it involves passing the password in the payload and defeats the purpose of using limited short-lived tokens.</p>
+<h3 id="authorization-code">Authorization code</h3>
+<p><code>grant_type: code</code></p>
+<p>This is the main flow. The most complete and the one you should favor when implementing OAuth2 on a frontend service.</p>
+<p>The flow is as follows:</p>
+<ol>
+<li>Client generates <code>code_challenge</code>, <code>code_verifier</code> and <code>state</code></li>
+<li>Client calls authorisation server with it&rsquo;s <code>redirect_uri</code>, the challenge, state and it&rsquo;s <code>client_id</code></li>
+<li>Authorisation server returns a redirect uri where user is asked for <strong>authorisation</strong></li>
+<li>After logging in, the user consents to the limited scope of access (aka. permissions)</li>
+<li>Authorisation server calls client on the provided <code>redirect_uri</code> if it matches it&rsquo;s configuration (more on this later) with the <code>state</code> and a <code>code</code></li>
+<li>Client validates <code>state</code> and exchanges <code>code</code> for <em>token</em>. This time it needs to provide the <code>code_verifier</code></li>
+<li>Authorisation server validates the verifier against the challenge provided earlier and generates a <em>token</em></li>
+<li>Client calls resource server with <em>token</em></li>
+</ol>
+<p>There&rsquo;s a few security measures that come with it to prevent CSRF attacks, namely to include
+a <code>nonce</code> and <code>PKCE</code> (read as pixie).</p>
+<p>All these moving parts complement different parts of the system and tackle different vulnerabilities. In the implementation post you&rsquo;ll see that it&rsquo;s actually pretty straight forward.</p>
+<h2 id="scope">Scope</h2>
+<p>For all these JSON requests you must include <code>scope</code>, which represents the <em>limited</em> access the resource owner is giving in the resource server. Like the <em>token</em> this is just a vague specification. You can implement your own rules on need. OIDC uses words like <code>email profile pictures</code>, but you can have <code>read:files write:photos</code> on your API. Azure AD uses tenantIds or API URIs. The only requirement is to pass each of the scopes space separated inside that string and the client must be registered in the authorisation server with a each of the scopes being asked to the resource owner.</p>
+<h2 id="token-1">Token</h2>
+<p>Now we get to the fun part. The token as mentioned early can be any kind of string. I won&rsquo;t bore you with the details on why short strings or meaningful ones can be problematic. I also won&rsquo;t go over why sharing database for the resource owner to validate a generated token with the authorisation token is a bad idea (this is not forbidden or disencouraged by the framework).</p>
+<p>The token design should simplify two things, passing context, simplifying validation. Alas, comes our hero JWT.</p>
+<p>The JWT has been designed to have a header, a payload and a signature. The three parts are base64 encoded and <code>.</code> separated.</p>
+<p>Why is it so powerful you might ask. Well, the signature allows for many different approaches. You can have symmetric signing, where resource server and authorisation server share a private key. You can use asymmetric, where you have public and private key pairs. You can add encryption on top of the signature. You can do all sorts of things. By signing the token, you allow it to carry context that you know was only included by your authorisation server and no other actors. If also prevents you from having to share a database or calling the server for validation (on an introspection endpoint). If you have an encryption method on top you could even include some sensible information.</p>
+<p>Signing is a powerful solution to removing an extra network call from your flow. Here&rsquo;s how the JWT flow has been standardised:</p>
+<ol>
+<li>Authorisation server has multiple public/private key pairs used to sign it&rsquo;s tokens (or shared private if agreed with the resource server)</li>
+<li>It serves the public keys in a <code>.well-known/keys</code> endpoint, which resource servers can regularly call to get non expired keys</li>
+<li>When generating a token it gets signed by a particular key and the key id (<code>kid</code>) is included in the token header</li>
+<li>The resource owner computes de signature with the public key that matches the <code>kid</code></li>
+</ol>
+<p>The JWT can include all sorts of information in the payload, although you should strive to keep it short, as it&rsquo;s passed as a header. Some of the following fields (aka. claims) called <em>registered</em> and recommended but not mandatory:</p>
+<ul>
+<li><code>iss</code>: issuer</li>
+<li><code>sub</code>: subject</li>
+<li><code>aud</code>: audience identifies the recipients</li>
+<li><code>exp</code>: expiration time</li>
+<li><code>iat</code>: issued at time</li>
+<li><code>nbf</code>: not before time</li>
+<li><code>jti</code>: unique identifier for JWT</li>
+</ul>
+<p>Besides the registered claims you also have public and private claims.</p>
+<h2 id="client-registration">Client registration</h2>
+<p>Finally we come to the client registration. It can be static or dynamic, even though you&rsquo;ll see a manual provisioning setup around dynamic registration. I&rsquo;ll go over this topic in the implementation post.</p>
+<h2 id="extras">Extras</h2>
+<p>Repeating an important point. OAuth2 does not handle <strong>authentication</strong>. In order to cover that, an extension protocol called OpenID Connect has been created on top of it, which relies on the authorisation server also being an identity provider. When that is the case, you can add authentication layer on top of it by leveraging a second token called the ID token and serving a <code>/userinfo</code> endpoint.</p>
+<p>The OIDC protocol is a bit complexer and deserves a full post to discuss it. I&rsquo;ll get a bit into the details during the implementation post, which you can read next.</p>
+
+      </article>
+
+      
+        <div class="article-tags"><span class="article-chip article-chip-5">architecture</span><span class="article-chip article-chip-9">backend</span><span class="article-chip article-chip-5">oauth2</span><span class="article-chip article-chip-5">authorisation</span><span class="article-chip article-chip-9">authentication</span><span class="article-chip article-chip-3">oidc</span>
+        </div>
+      
+
+    </div>
+  </div>
+
+  </main>
+  
+  <footer>
+    <footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__brand">
+      <div class="site-footer__copy">© 2026 MIT Licensed.</div>
+      <div class="site-footer__tagline">Joao Pargana Blog & Site</div>
+    </div>
+    <div class="site-footer__social">
+      <a class="site-footer__social-link" href="https://github.com/jmpargana/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="currentColor" d="M237.9 461.4C237.9 463.4 235.6 465 232.7 465C229.4 465.3 227.1 463.7 227.1 461.4C227.1 459.4 229.4 457.8 232.3 457.8C235.3 457.5 237.9 459.1 237.9 461.4zM206.8 456.9C206.1 458.9 208.1 461.2 211.1 461.8C213.7 462.8 216.7 461.8 217.3 459.8C217.9 457.8 216 455.5 213 454.6C210.4 453.9 207.5 454.9 206.8 456.9zM251 455.2C248.1 455.9 246.1 457.8 246.4 460.1C246.7 462.1 249.3 463.4 252.3 462.7C255.2 462 257.2 460.1 256.9 458.1C256.6 456.2 253.9 454.9 251 455.2zM316.8 72C178.1 72 72 177.3 72 316C72 426.9 141.8 521.8 241.5 555.2C254.3 557.5 258.8 549.6 258.8 543.1C258.8 536.9 258.5 502.7 258.5 481.7C258.5 481.7 188.5 496.7 173.8 451.9C173.8 451.9 162.4 422.8 146 415.3C146 415.3 123.1 399.6 147.6 399.9C147.6 399.9 172.5 401.9 186.2 425.7C208.1 464.3 244.8 453.2 259.1 446.6C261.4 430.6 267.9 419.5 275.1 412.9C219.2 406.7 162.8 398.6 162.8 302.4C162.8 274.9 170.4 261.1 186.4 243.5C183.8 237 175.3 210.2 189 175.6C209.9 169.1 258 202.6 258 202.6C278 197 299.5 194.1 320.8 194.1C342.1 194.1 363.6 197 383.6 202.6C383.6 202.6 431.7 169 452.6 175.6C466.3 210.3 457.8 237 455.2 243.5C471.2 261.2 481 275 481 302.4C481 398.9 422.1 406.6 366.2 412.9C375.4 420.8 383.2 435.8 383.2 459.3C383.2 493 382.9 534.7 382.9 542.9C382.9 549.4 387.5 557.3 400.2 555C500.2 521.8 568 426.9 568 316C568 177.3 455.5 72 316.8 72zM169.2 416.9C167.9 417.9 168.2 420.2 169.9 422.1C171.5 423.7 173.8 424.4 175.1 423.1C176.4 422.1 176.1 419.8 174.4 417.9C172.8 416.3 170.5 415.6 169.2 416.9zM158.4 408.8C157.7 410.1 158.7 411.7 160.7 412.7C162.3 413.7 164.3 413.4 165 412C165.7 410.7 164.7 409.1 162.7 408.1C160.7 407.5 159.1 407.8 158.4 408.8zM190.8 444.4C189.2 445.7 189.8 448.7 192.1 450.6C194.4 452.9 197.3 453.2 198.6 451.6C199.9 450.3 199.3 447.3 197.3 445.4C195.1 443.1 192.1 442.8 190.8 444.4zM179.4 429.7C177.8 430.7 177.8 433.3 179.4 435.6C181 437.9 183.7 438.9 185 437.9C186.6 436.6 186.6 434 185 431.7C183.6 429.4 181 428.4 179.4 429.7z"/></svg></div>
+        <span class="site-footer__social-label">GitHub</span>
+      </a>
+      <a class="site-footer__social-link" href="https://www.linkedin.com/in/jo%C3%A3o-pargana-9757b91b2/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="currentColor" d="M512 96L127.9 96C110.3 96 96 110.5 96 128.3L96 511.7C96 529.5 110.3 544 127.9 544L512 544C529.6 544 544 529.5 544 511.7L544 128.3C544 110.5 529.6 96 512 96zM231.4 480L165 480L165 266.2L231.5 266.2L231.5 480L231.4 480zM198.2 160C219.5 160 236.7 177.2 236.7 198.5C236.7 219.8 219.5 237 198.2 237C176.9 237 159.7 219.8 159.7 198.5C159.7 177.2 176.9 160 198.2 160zM480.3 480L413.9 480L413.9 376C413.9 351.2 413.4 319.3 379.4 319.3C344.8 319.3 339.5 346.3 339.5 374.2L339.5 480L273.1 480L273.1 266.2L336.8 266.2L336.8 295.4L337.7 295.4C346.6 278.6 368.3 260.9 400.6 260.9C467.8 260.9 480.3 305.2 480.3 362.8L480.3 480z"/></svg></div>
+        <span class="site-footer__social-label">LinkedIn</span>
+      </a>
+      <a class="site-footer__social-link" href="mailto:jmpargana@gmail.com" aria-label="Email">
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-16 -16 96 96">
+    <g transform="scale(1, 1.25) translate(0, -6)">
+      <path fill="currentColor" d="M32,34.934L63.617,10.34C62.984,8.965,61.613,8,60,8H4c-1.613,0-2.984,0.965-3.617,2.34L32,34.934z"/>
+      <path fill="currentColor" d="M34.457,43.156C33.734,43.719,32.867,44,32,44s-1.734-0.281-2.457-0.844L0,20.18V52c0,2.211,1.789,4,4,4h56c2.211,0,4-1.789,4-4V20.18L34.457,43.156z"/>
+    </g>
+  </svg></div>
+        <span class="site-footer__social-label">Email</span>
+      </a>
+    </div>
+  </div>
+</footer>
+
+  </footer>
+  
+</body>
+</html>
