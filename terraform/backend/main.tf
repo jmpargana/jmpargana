@@ -55,6 +55,70 @@ data "aws_iam_policy_document" "allow_lambda" {
   }
 }
 
+resource "aws_iam_openid_connect_provider" "github" {
+  url = "https://token.actions.githubusercontent.com"
+  
+  client_id_list = [
+    "sts.amazonaws.com"
+  ]
+
+  thumbprint_list = [
+    "6938fd4d98bab03faadb97b34396831e3780aea1"
+  ]
+}
+
+resource "aws_iam_role" "github_actions_lambda_invoke" {
+  name = "github-actions-lambda-invoke"
+
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect = "Allow"
+        Principal = {
+          Federated = aws_iam_openid_connect_provider.github.arn
+        }
+        Action = "sts:AssumeRoleWithWebIdentity"
+        Condition = {
+          StringEquals = {
+            "token.actions.githubusercontent.com:aud" = "sts.amazonaws.com"
+            "token.actions.githubusercontent.com:sub" = "repo:jmpargana/jmpargana.github.io:ref:refs/heads/main"
+          }
+        }
+      }
+    ]
+  })
+}
+
+resource "aws_iam_policy" "lambda_invoke_policy" {
+  name = "lambda-invoke-specific"
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect = "Allow"
+        Action = [
+          "lambda:InvokeFunction"
+        ]
+        Resource = aws_lambda_function.broadcast.arn
+      }
+    ]
+  })
+}
+
+resource "aws_iam_role_policy_attachment" "attach_policy" {
+  role       = aws_iam_role.github_actions_lambda_invoke.name
+  policy_arn = aws_iam_policy.lambda_invoke_policy.arn
+}
+
+resource "aws_lambda_permission" "allow_github_role" {
+  statement_id  = "AllowGithubActionsInvoke"
+  action        = "lambda:InvokeFunction"
+  function_name = aws_lambda_function.broadcast.function_name
+  principal     = "arn:aws:iam::<ACCOUNT_ID>:role/${aws_iam_role.github_actions_lambda_invoke.name}"
+}
+
 resource "aws_iam_role" "role" {
   name               = format("%s-lambda-execution-role", var.name)
   assume_role_policy = data.aws_iam_policy_document.allow_lambda.json
@@ -102,14 +166,14 @@ resource "aws_ses_template" "name" {
 }
 
 
-# resource "aws_lambda_function" "broadcast" {
-#   filename         = data.archive_file.zip.output_path
-#   function_name    = format("%s-leave-user", var.name)
-#   role             = aws_iam_role.role.arn
-#   handler          = "broadcast.lambda_handler"
-#   source_code_hash = data.archive_file.zip.output_base64sha256
-#   runtime          = "python3.12"
-# }
+resource "aws_lambda_function" "broadcast" {
+  filename         = data.archive_file.zip.output_path
+  function_name    = format("%s-leave-user", var.name)
+  role             = aws_iam_role.role.arn
+  handler          = "broadcast.lambda_handler"
+  source_code_hash = data.archive_file.zip.output_base64sha256
+  runtime          = "python3.12"
+}
 
 output "api_gateway_invoke_url" {
   value = aws_api_gateway_stage.name.invoke_url
