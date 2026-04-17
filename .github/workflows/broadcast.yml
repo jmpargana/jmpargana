@@ -1,0 +1,26 @@
+# TODO: observe changes to posts only
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  invoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::<ACCOUNT_ID>:role/github-actions-lambda-invoke
+          aws-region: eu-west-1
+
+      - name: Invoke Lambda
+        run: |
+          aws lambda invoke \
+            --function-name <your-function-name> \
+            response.json
